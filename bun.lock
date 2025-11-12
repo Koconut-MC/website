@@ -1,10 +1,11 @@
 {
   "lockfileVersion": 1,
+  "configVersion": 0,
   "workspaces": {
     "": {
       "name": "evolved-event",
       "dependencies": {
-        "astro": "^5.15.2",
+        "astro": "^5.15.5",
       },
     },
   },

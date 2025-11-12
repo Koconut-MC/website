@@ -1,0 +1,38 @@
+---
+import { type page } from "../ts/types";
+import HtmlBody from "../layouts/Body.astro";
+import Header from "../components/Header.astro";
+
+interface Props {
+	page: page;
+}
+const { page } = Astro.props;
+---
+
+<HtmlBody title={page}>
+	<video muted autoplay loop>
+		<source src="" type="video/mp4" />
+	</video>
+	<Header current={page} />
+	<main>
+		<slot />
+	</main>
+</HtmlBody>
+
+<style>
+	video {
+		width: 100vw;
+		height: 100vh;
+		pointer-events: none;
+		user-select: none;
+		position: absolute;
+	}
+
+	main {
+		display: grid;
+		margin-inline: auto;
+		margin-top: 10px;
+		gap: 30px;
+		width: calc(var(--header-width) + 100px);
+	}
+</style>

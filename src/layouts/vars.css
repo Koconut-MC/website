@@ -1,0 +1,7 @@
+:root {
+	--element-clr: hsl(360 0 10);
+	--header-width: 1200px;
+	--text-clr: rgb(230, 230, 230);
+
+	color-scheme: dark;
+}

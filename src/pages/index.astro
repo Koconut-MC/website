@@ -1,8 +1,47 @@
 ---
-import HtmlBody from '../layouts/Body.astro';
-import Header from '../components/Header.astro';
+import Slideshow from "../components/Slideshow.astro";
+import StatusApi from "../components/StatusApi.astro";
+import Discord from "../components/Discord.astro";
+import Page from "../layouts/Page.astro";
+import Map from "../components/Map.astro";
 ---
 
-<HtmlBody>
-	<Header/>
-</HtmlBody>
+<Page page="Home">
+	<div class="row">
+		<section class="left">
+			<Slideshow />
+		</section>
+		<section class="right">
+			<StatusApi />
+		</section>
+	</div>
+	<div class="row">
+		<section class="left"></section>
+		<section class="right">
+			<Map />
+		</section>
+	</div>
+	<div class="row">
+		<section class="left"></section>
+		<section class="right">
+			<Discord />
+		</section>
+	</div>
+</Page>
+
+<style>
+	.row {
+		display: flex;
+		justify-content: space-between;
+	}
+	.left,
+	.right {
+		display: grid;
+	}
+	.left {
+		width: 60%;
+	}
+	.right {
+		width: 37%;
+	}
+</style>
