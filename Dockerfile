@@ -12,8 +12,8 @@ FROM joseluisq/static-web-server:debian AS runtime
 
 WORKDIR /data
 
-COPY --from=builder /build/www ./www
+COPY --from=builder /build/dist ./dist
 
 EXPOSE 80/tcp
 
-ENTRYPOINT [ "sh", "-c", "static-web-server -p 80 -d /data/www -g trace" ]
+ENTRYPOINT [ "sh", "-c", "static-web-server -p 80 -d /data/dist -g trace" ]
