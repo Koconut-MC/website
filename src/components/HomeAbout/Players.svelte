@@ -55,10 +55,6 @@
 		margin-inline: auto;
 		color: rgb(100, 100, 100);
 		text-decoration: underline;
-
-		&:hover {
-			cursor: pointer;
-		}
 	}
 
 	.server {
