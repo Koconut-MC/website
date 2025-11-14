@@ -1,5 +1,5 @@
 ---
-
+import PlayerCount from "./api.svelte";
 ---
 
 <section>
@@ -15,13 +15,7 @@
 		<a href="/about/">About</a>
 	</div>
 	<span class="spacer"></span>
-	<div class="playing-now">
-		<p>
-			<span class="yellow" id="player-count">...</span>/<span
-				id="player-max">...</span
-			> Playing Now
-		</p>
-	</div>
+	<PlayerCount client:only="svelte" />
 	<div class="button smp-url">
 		<button
 			><svg
@@ -41,8 +35,6 @@
 	</div>
 </section>
 
-<script src="./api.ts"></script>
-
 <style>
 	section {
 		--text-clr-status: rgb(150, 150, 150);
@@ -55,9 +47,6 @@
 
 	.click-to-join {
 		color: var(--text-clr-status);
-	}
-	.yellow {
-		color: var(--special-clr);
 	}
 	.spacer {
 		display: block;
@@ -89,7 +78,7 @@
 	.button {
 		margin-inline: auto;
 		width: fit-content;
-		margin: 30px auto 0 auto;
+		margin: 20px auto 0 auto;
 
 		button {
 			display: flex;
