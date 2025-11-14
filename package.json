@@ -1,14 +1,17 @@
 {
-  "name": "evolved-event",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "astro": "^5.15.5"
-  }
+	"name": "evolved-event",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"@astrojs/svelte": "^7.2.2",
+		"astro": "^5.15.5",
+		"svelte": "^5.43.6",
+		"typescript": "^5.9.3"
+	}
 }
