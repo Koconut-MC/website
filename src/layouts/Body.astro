@@ -23,6 +23,11 @@ const { title } = Astro.props;
 <style is:global>
 	@import "./vars.css";
 
+	::selection {
+		background-color: var(--special-clr);
+		color: black;
+	}
+
 	body {
 		display: grid;
 		font-family:
@@ -47,5 +52,9 @@ const { title } = Astro.props;
 		&:visited {
 			color: var(--text-clr);
 		}
+	}
+
+	button:hover {
+		cursor: pointer;
 	}
 </style>

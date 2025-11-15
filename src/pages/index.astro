@@ -1,47 +1,40 @@
 ---
-import Slideshow from "../components/Slideshow.astro";
-import StatusApi from "../components/StatusApi/src.astro";
+import Changelogs from "../components/Changelogs/src.astro";
+import Slideshow from "../components/Slideshow/src.svelte";
+import StatusApi from "../components/HomeAbout/src.astro";
 import Discord from "../components/Discord.astro";
 import Page from "../layouts/Page.astro";
 import Map from "../components/Map.astro";
 ---
 
 <Page page="Home">
-	<div class="row">
-		<section class="left">
-			<Slideshow />
-		</section>
-		<section class="right">
-			<StatusApi />
-		</section>
+	<div class="left">
+		<Slideshow client:only="svelte" />
+		<Changelogs />
 	</div>
-	<div class="row">
-		<section class="left"></section>
-		<section class="right">
-			<Map />
-		</section>
-	</div>
-	<div class="row">
-		<section class="left"></section>
-		<section class="right">
-			<Discord />
-		</section>
+	<div class="right">
+		<StatusApi />
+		<Map />
+		<Discord />
 	</div>
 </Page>
 
 <style>
-	.row {
-		display: flex;
-		justify-content: space-between;
-	}
 	.left,
 	.right {
 		display: grid;
-	}
-	.left {
-		width: 60%;
+		height: fit-content;
 	}
 	.right {
 		width: 37%;
+		gap: 30px;
+	}
+	.left {
+		width: 60%;
+		gap: 50px;
+
+		.md-changelog:nth-child(even) {
+			background-color: var(--element-clr-odd);
+		}
 	}
 </style>

@@ -48,14 +48,24 @@ const { current } = Astro.props;
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
-		gap: 50px;
 		padding: 15px 50px;
 		background-color: var(--element-clr);
 		width: var(--header-width);
+		box-shadow: 12px 12px 0px 1px rgb(10, 10, 10);
 	}
 
 	img {
 		margin-top: 50px;
+		transition: height 0.3s;
+	}
+
+	.header-logo {
+		margin-inline: auto;
+
+		&:hover img {
+			height: 210px;
+			transition: height 0.3s;
+		}
 	}
 
 	.header-button {
@@ -68,7 +78,7 @@ const { current } = Astro.props;
 		justify-content: center;
 		align-items: center;
 		text-align: center;
-		padding: 15px;
+		padding: 15px 30px 15px 30px;
 		font-weight: bold;
 		font-size: 1.2rem;
 		border-radius: 5px;
@@ -83,9 +93,5 @@ const { current } = Astro.props;
 			background-color: var(--background-clr-hover);
 			transition: background-color 0.1s;
 		}
-	}
-
-	.header-logo {
-		margin-inline: auto;
 	}
 </style>

@@ -29,10 +29,11 @@ const { page } = Astro.props;
 	}
 
 	main {
-		display: grid;
+		display: flex;
+		justify-content: center;
+		gap: 30px;
 		margin-inline: auto;
 		margin-top: 10px;
-		gap: 30px;
 		width: calc(var(--header-width) + 100px);
 	}
 </style>
