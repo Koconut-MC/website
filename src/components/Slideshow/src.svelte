@@ -125,5 +125,6 @@
 		color: var(--text-clr);
 		height: fit-content;
 		width: fit-content;
+		border-top-left-radius: 5px;
 	}
 </style>
