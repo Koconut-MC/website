@@ -15,6 +15,9 @@ const { current } = Astro.props;
 		<a href="/" class="header-button" data-current={current === "Home"}
 			>Home</a
 		>
+		<a href="" class="header-button" data-current={current === "About"}
+			>About</a
+		>
 		<a
 			href="https://map.koconutmc.com/"
 			class="header-button"
@@ -28,9 +31,6 @@ const { current } = Astro.props;
 		>
 		<a href="" class="header-button" data-current={current === "Commands"}
 			>Commands</a
-		>
-		<a href="" class="header-button" data-current={current === "About"}
-			>About</a
 		>
 	</nav>
 </header>
@@ -48,7 +48,7 @@ const { current } = Astro.props;
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
-		padding: 15px 50px;
+		padding: 0 50px;
 		background-color: var(--element-clr);
 		width: var(--header-width);
 		box-shadow: 12px 12px 0px 1px rgb(10, 10, 10);
@@ -70,18 +70,18 @@ const { current } = Astro.props;
 
 	.header-button {
 		--text-clr: hsl(360 1 70);
-		--text-clr-active: black;
-		--background-clr-active: hsl(360 1 85);
+		--text-clr-active: var(--special-clr);
+		--background-clr-active: hsl(360 1 25);
 		--background-clr-hover: hsl(360 1 20);
 
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		text-align: center;
-		padding: 15px 30px 15px 30px;
+		padding: 0 50px 0 50px;
+		height: 70px;
 		font-weight: bold;
-		font-size: 1.2rem;
-		border-radius: 5px;
+		font-size: 1.3rem;
 		color: var(--text-clr);
 		transition: background-color 0.2s;
 
