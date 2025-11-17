@@ -1,8 +1,9 @@
 ---
 interface Props {
 	height: string;
+	width: string;
 }
-const { height } = Astro.props;
+const { height, width } = Astro.props;
 ---
 
 <div>
@@ -25,12 +26,12 @@ const { height } = Astro.props;
 		loading="lazy"></iframe>
 </div>
 
-<style define:vars={{ height }}>
+<style define:vars={{ height, width }}>
 	svg {
 		fill: rgb(200, 200, 200);
 	}
 	iframe {
-		width: 100%;
+		width: var(--width);
 		height: var(--height);
 		border: 0;
 	}
