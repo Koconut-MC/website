@@ -26,7 +26,7 @@
 							<img
 								src={"https://crafatar.com/renders/head/" +
 									player.id}
-								alt={player.name}
+								alt=""
 								height="30px"
 							/>
 							<p>{player.name}</p>
