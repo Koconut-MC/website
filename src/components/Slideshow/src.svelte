@@ -2,7 +2,8 @@
 	import pictures from "./Gallery";
 
 	let picture_index = Math.floor(Math.random() * pictures.length);
-	let current_picture = pictures[picture_index];
+	let current_picture = $state(pictures[picture_index]);
+
 	let auto_advance_interval: NodeJS.Timeout;
 
 	function picture_display(advance: boolean) {
@@ -52,8 +53,8 @@
 		</div>
 	</header>
 	<section>
-		<button on:click={() => picture_display(false)}>&#10094;</button>
-		<button on:click={() => picture_display(true)}>&#10095;</button>
+		<button onclick={() => picture_display(false)}>&#10094;</button>
+		<button onclick={() => picture_display(true)}>&#10095;</button>
 	</section>
 </main>
 

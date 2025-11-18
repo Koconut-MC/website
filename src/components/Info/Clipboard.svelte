@@ -1,6 +1,6 @@
 <script lang="ts">
-	let copied = false;
-	let domain = "smp.koconutmc.com";
+	let copied = $state(false);
+	let domain = $state("smp.koconutmc.com");
 
 	function clipboard() {
 		if (copied) {
@@ -17,7 +17,7 @@
 </script>
 
 <div class="button smp-url">
-	<button on:click={clipboard}
+	<button onclick={clipboard}
 		><svg
 			xmlns="http://www.w3.org/2000/svg"
 			viewBox="0 -960 960 960"

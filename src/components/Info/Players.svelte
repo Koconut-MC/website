@@ -1,5 +1,5 @@
 <script lang="ts">
-	let showing_players = false;
+	let showing_players = $state(false);
 
 	async function mc_api() {
 		const mc_server_info = await fetch(
@@ -17,7 +17,7 @@
 					.players.max} Playing Now
 			</p>
 			{#if response.players.online > 0}
-				<button on:click={() => (showing_players = !showing_players)}
+				<button onclick={() => (showing_players = !showing_players)}
 					>{showing_players ? "Hide Players" : "Show Players"}</button
 				>
 				{#if showing_players}
