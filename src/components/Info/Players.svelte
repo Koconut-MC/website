@@ -1,13 +1,45 @@
 <script lang="ts">
+	interface Player {
+		id: string;
+		name: string;
+	}
+	interface Players {
+		online: number;
+		max: number;
+		sample: Player[];
+	}
+	interface McStatus {
+		online: boolean;
+		players: Players;
+	}
+
 	let showing_players = $state(false);
 
-	async function mc_api() {
+	async function mc_api(): Promise<McStatus> {
 		const mc_server_info = await fetch(
 			"https://eu.mc-api.net/v3/server/ping/koconutmc.com",
 		);
 		return await mc_server_info.json();
 	}
 </script>
+
+{#snippet show_players(response: McStatus)}
+	<button onclick={() => (showing_players = !showing_players)}
+		>{showing_players ? "Hide Players" : "Show Players"}</button
+	>
+	{#if showing_players}
+		{#each response.players.sample as player}
+			<div class="player">
+				<img
+					src={"https://crafatar.com/renders/head/" + player.id}
+					alt=""
+					height="30px"
+				/>
+				<p>{player.name}</p>
+			</div>
+		{/each}
+	{/if}
+{/snippet}
 
 {#await mc_api() then response}
 	<div class="server">
@@ -17,22 +49,7 @@
 					.players.max} Playing Now
 			</p>
 			{#if response.players.online > 0}
-				<button onclick={() => (showing_players = !showing_players)}
-					>{showing_players ? "Hide Players" : "Show Players"}</button
-				>
-				{#if showing_players}
-					{#each response.players.sample as player}
-						<div class="player">
-							<img
-								src={"https://crafatar.com/renders/head/" +
-									player.id}
-								alt=""
-								height="30px"
-							/>
-							<p>{player.name}</p>
-						</div>
-					{/each}
-				{/if}
+				{@render show_players(response)}
 			{/if}
 		{:else}
 			<p class="red">Server Offline</p>
