@@ -4,32 +4,32 @@ import { type page } from "../ts/global";
 interface Props {
 	current: page;
 }
+
+const header_pages = ["Home", "About", "Map", "Modpack", "Issues", "Commands"];
+
 const { current } = Astro.props;
 ---
 
 <header>
-	<a href="" class="header-logo">
-		<img src="/koconutmc.webp" alt="" height="200px" />
+	<a href="/" class="header-logo">
+		<img src="/koconutmc.webp" alt="Home" height="200px" />
 	</a>
 	<nav>
-		<a href="/" class="header-button" data-current={current === "Home"}
-			>Home</a
-		>
-		<a href="" class="header-button" data-current={current === "About"}
-			>About</a
-		>
-		<a href="/map/" class="header-button" data-current={current === "Map"}
-			>Live Map</a
-		>
-		<a href="" class="header-button" data-current={current === "Modpack"}
-			>Modpack</a
-		>
-		<a href="" class="header-button" data-current={current === "Issues"}
-			>Issues</a
-		>
-		<a href="" class="header-button" data-current={current === "Commands"}
-			>Commands</a
-		>
+		{
+			header_pages.map((page) => (
+				<a
+					href={
+						page === "Home"
+							? "/"
+							: page[0].toLowerCase() + page.slice(1)
+					}
+					data-current={current === page}
+					class="header-button"
+				>
+					{page}
+				</a>
+			))
+		}
 	</nav>
 </header>
 
