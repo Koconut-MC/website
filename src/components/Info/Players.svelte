@@ -38,6 +38,8 @@
 			<p class="red">Server Offline</p>
 		{/if}
 	</div>
+{:catch error}
+	<p class="red error">{error}</p>
 {/await}
 
 <style>
@@ -72,6 +74,11 @@
 			font-weight: normal;
 			font-size: 1.1rem;
 		}
+	}
+	.error {
+		text-align: center;
+		font-weight: normal;
+		font-size: 1.1rem;
 	}
 	.yellow {
 		color: var(--special-clr);
