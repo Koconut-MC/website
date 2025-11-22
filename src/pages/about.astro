@@ -1,0 +1,59 @@
+---
+import Page from "../layouts/Page.astro";
+import About from "../md/about.md";
+---
+
+<Page page="About">
+	<div class="element">
+		<About />
+	</div>
+</Page>
+
+<style>
+	.element {
+		background-color: var(--element-clr-odd);
+		width: 100%;
+		text-align: center;
+		text-wrap: balance;
+		padding: 20px 100px 20px 100px;
+
+		h1,
+		p {
+			margin-inline: auto;
+		}
+		h1::after {
+			content: "";
+			display: block;
+			background-color: rgb(40, 40, 40);
+			width: 60%;
+			height: 1px;
+			margin: 30px auto 0 auto;
+		}
+		h1 {
+			color: var(--special-clr);
+		}
+		p {
+			font-size: 1.1rem;
+			line-height: 1.9rem;
+			color: var(--text-clr);
+			margin-top: 0;
+		}
+		a {
+			text-decoration: underline;
+			color: var(--text-clr-status);
+
+			&:hover,
+			&:visited,
+			&:active {
+				color: var(--text-clr-status);
+			}
+		}
+		ul {
+			width: 660px;
+			margin-inline: auto;
+		}
+		li {
+			text-align: left;
+		}
+	}
+</style>
