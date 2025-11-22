@@ -1,0 +1,35 @@
+---
+// Automate changelogs on the home page
+const md_dir = import.meta.glob("../md/changelogs/*.md", { eager: true });
+const mds = Object.values(md_dir).map((file) => {
+	const { Content } = file as any; //its all hacks anyway, lets create more
+	return {
+		Content,
+	};
+});
+---
+
+<section class="md-changelog">
+	{mds.map((md) => <md.Content />)}
+</section>
+
+<style>
+	section {
+		background-color: var(--element-clr);
+		padding: 20px;
+
+		h1 {
+			background-color: rgb(10, 10, 10);
+			color: var(--special-clr);
+			width: fit-content;
+			padding: 10px 20px 10px 20px;
+			font-size: 1.5rem;
+		}
+		:not(h1) {
+			color: var(--text-clr);
+		}
+		a {
+			text-decoration: underline;
+		}
+	}
+</style>
