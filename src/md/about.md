@@ -11,3 +11,9 @@ Our modpack was created and derived from a previous modpack that belonged to ano
 - **NepuDragon:** Main lead of the modpack, SMP rules, safety, and advertising.
 
 - **Rocky / glumpball:** Lead admin and rule enforcement.
+
+# Contact
+
+[**Discord**](https://discord.gg/ZSY2HR9Wv5)
+
+[**Email**](mailto:koco@koconutmc.com)
