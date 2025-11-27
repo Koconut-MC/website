@@ -1,6 +1,7 @@
 <script lang="ts">
+	const smp_domain = "smp.koconutmc.com";
 	let copied = $state(false);
-	let domain = $state("smp.koconutmc.com");
+	let domain = $state(smp_domain);
 
 	function clipboard() {
 		if (copied) {
@@ -11,7 +12,7 @@
 		domain = "Copied to clipboard!";
 		setTimeout(() => {
 			copied = false;
-			domain = "smp.koconutmc.com";
+			domain = smp_domain;
 		}, 5000);
 	}
 </script>
