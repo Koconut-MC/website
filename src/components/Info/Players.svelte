@@ -17,7 +17,7 @@
 
 	async function mc_api(): Promise<McStatus> {
 		const mc_server_info = await fetch(
-			"https://eu.mc-api.net/v3/server/ping/koconutmc.com",
+			"https://eu.mc-api.net/v3/server/ping/smp.koconutmc.com",
 		);
 		return await mc_server_info.json();
 	}
