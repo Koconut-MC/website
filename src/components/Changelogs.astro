@@ -9,9 +9,13 @@ const mds = Object.values(md_dir).map((file) => {
 });
 ---
 
-<section class="md-changelog">
-	{mds.map((md) => <md.Content />)}
-</section>
+{
+	mds.map((md) => (
+		<section class="md-changelog">
+			<md.Content />
+		</section>
+	))
+}
 
 <style>
 	section {
