@@ -33,7 +33,11 @@ const mds = Object.values(md_dir).map((file) => {
 			color: var(--text-clr);
 		}
 		a {
-			text-decoration: underline;
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
 		}
 	}
 </style>
