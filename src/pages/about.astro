@@ -21,16 +21,17 @@ import About from "../md/about.md";
 		p {
 			margin-inline: auto;
 		}
-		h1::after {
-			content: "";
-			display: block;
-			background-color: rgb(40, 40, 40);
-			width: 60%;
-			height: 1px;
-			margin: 30px auto 0 auto;
-		}
 		h1 {
 			color: var(--special-clr);
+
+			&::after {
+				content: "";
+				display: block;
+				background-color: rgb(40, 40, 40);
+				width: 60%;
+				height: 1px;
+				margin: 20px auto 0 auto;
+			}
 		}
 		p {
 			font-size: 1.1rem;
