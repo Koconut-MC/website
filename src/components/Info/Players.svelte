@@ -31,7 +31,8 @@
 		{#each response.players.sample as player}
 			<div class="player">
 				<img
-					src={"https://crafatar.com/renders/head/" + player.id}
+					src={"https://crafatar-api.koconutmc.com/renders/head/" +
+						player.id}
 					alt=""
 					height="30px"
 				/>
