@@ -21,7 +21,7 @@ const { current } = Astro.props;
 					href={
 						page === "Home"
 							? "/"
-							: page[0].toLowerCase() + page.slice(1)
+							: `/${page[0].toLowerCase() + page.slice(1)}`
 					}
 					data-current={current === page}
 					class="header-button"
