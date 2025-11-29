@@ -23,7 +23,7 @@ const pictures: Picture[] = [
 	{
 		file_name: "logans_island.webp",
 		display_name: "Logan's Island",
-		author_date: "DraconicLogan, 11/2/25",
+		author_date: "DraconicLogan, 11/28/25",
 	},
 	{
 		file_name: "spawn_koconut.webp",
