@@ -1,0 +1,55 @@
+---
+import ModpackDownloads from "../components/ModpackDownloads.astro";
+import Clipboard from "../components/Clipboard.svelte";
+import Page from "../layouts/Page.astro";
+---
+
+<Page page="Modpack">
+	<div class="element">
+		<h1>Downloads</h1>
+		<p>
+			Koconut MC's modpack is provided for both CurseForge and Modrinth
+			modding platforms. The modpack is required to join the SMP, Choose
+			an option below to get started:
+		</p>
+		<ModpackDownloads />
+		<h1>Multiplayer</h1>
+		<p>Koconut MC's official SMP server is at smp.koconutmc.com</p>
+		<Clipboard width="412px" client:only="svelte" />
+		<a href="https://discord.gg/ZSY2HR9Wv5" target="_blank">Discord</a>
+	</div>
+</Page>
+
+<style>
+	h1 {
+		color: var(--special-clr);
+		margin-top: 10px;
+
+		&::after {
+			content: "";
+			display: block;
+			width: 60%;
+			height: 1px;
+			background-color: rgb(40, 40, 40);
+			margin: 20px auto 0 auto;
+		}
+	}
+	p {
+		font-size: 1.1rem;
+		line-height: 1.9rem;
+		color: var(--text-clr);
+		text-wrap: balance;
+		margin-bottom: 30px;
+	}
+
+	.element {
+		display: grid;
+		justify-content: center;
+		align-items: center;
+		background-color: var(--element-clr-odd);
+		width: 100%;
+		text-align: center;
+		text-wrap: balance;
+		padding: 50px 100px 50px 100px;
+	}
+</style>

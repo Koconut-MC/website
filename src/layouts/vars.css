@@ -1,6 +1,7 @@
 :root {
 	--element-clr: hsl(360 0 10);
 	--element-clr-odd: hsl(360 0 8);
+	--text-clr-status: rgb(150, 150, 150);
 	--text-clr: rgb(230, 230, 230);
 	--special-clr: #ffdf70;
 	--header-width: 1200px;
