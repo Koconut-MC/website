@@ -9,7 +9,7 @@ services:
         networks:
             - crafatar-net
         volumes:
-            - ./koconut_mc_modpack:/data/dist/modpack:ro
+            - ./modpacks:/data/dist/download:ro
     redis:
         image: redis
         container_name: redis
