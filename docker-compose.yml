@@ -6,8 +6,6 @@ services:
         ports:
             - "8000:80"
         restart: unless-stopped
-        networks:
-            - crafatar-net
         volumes:
             - ./modpacks:/data/dist/download:ro
     redis:
