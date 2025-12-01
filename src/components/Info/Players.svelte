@@ -1,12 +1,12 @@
 <script lang="ts">
 	interface Player {
-		id: string;
+		uuid: string;
 		name: string;
 	}
 	interface Players {
 		online: number;
 		max: number;
-		sample: Player[];
+		list: Player[];
 	}
 	interface McStatus {
 		online: boolean;
@@ -17,7 +17,7 @@
 
 	async function mc_api(): Promise<McStatus> {
 		const mc_server_info = await fetch(
-			"https://eu.mc-api.net/v3/server/ping/smp.koconutmc.com",
+			"https://api.mcsrvstat.us/3/smp.koconutmc.com",
 		);
 		return await mc_server_info.json();
 	}
@@ -28,11 +28,11 @@
 		>{showing_players ? "Hide Players" : "Show Players"}</button
 	>
 	{#if showing_players}
-		{#each response.players.sample as player}
+		{#each response.players.list as player}
 			<div class="player">
 				<img
 					src={"https://crafatar-api.koconutmc.com/renders/head/" +
-						player.id}
+						player.uuid}
 					alt=""
 					height="30px"
 				/>
