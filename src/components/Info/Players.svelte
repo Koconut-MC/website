@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Loading from "../Loading.svelte";
+
 	interface Player {
 		uuid: string;
 		name: string;
@@ -13,15 +15,20 @@
 		players: Players;
 	}
 
+	let loading_players = $state(true);
 	let showing_players = $state(false);
 
 	async function mc_api(): Promise<McStatus> {
 		const mc_server_info = await fetch(
 			"https://api.mcsrvstat.us/3/smp.koconutmc.com",
 		);
-		return await mc_server_info.json();
+		const json = await mc_server_info.json();
+		loading_players = false;
+		return json;
 	}
 </script>
+
+<Loading visible={loading_players} />
 
 {#snippet show_players(response: McStatus)}
 	<button onclick={() => (showing_players = !showing_players)}
