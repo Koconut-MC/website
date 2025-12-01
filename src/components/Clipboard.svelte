@@ -1,7 +1,10 @@
 <script lang="ts">
 	const smp_domain = "smp.koconutmc.com";
 
-	const { width } = $props();
+	interface Props {
+		width: string;
+	}
+	const { width }: Props = $props();
 	let copied = $state(false);
 	let domain = $state(smp_domain);
 
