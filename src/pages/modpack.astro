@@ -7,16 +7,33 @@ import Page from "../layouts/Page.astro";
 <Page page="Modpack">
 	<div class="element">
 		<h1>Downloads</h1>
-		<p>
+		<p class="modpack-description">
 			Koconut MC's modpack is provided for both CurseForge and Modrinth
 			modding platforms. The modpack is required to join the SMP, Choose
 			an option below to get started:
 		</p>
 		<ModpackDownloads />
 		<h1>Multiplayer</h1>
-		<p>Koconut MC's official SMP server is at smp.koconutmc.com</p>
+		<p>
+			Provided with the modpack is Koconut SMP which is the <strong
+				>official</strong
+			> SMP server for the Koconut MC modpack. Click the button below to copy
+			the server address to play but joining the Discord server is <strong
+				>required</strong
+			>.
+		</p>
 		<Clipboard width="412px" client:only="svelte" />
-		<a href="https://discord.gg/ZSY2HR9Wv5" target="_blank">Discord</a>
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			height="30px"
+			width="30px"
+			viewBox="0 -960 960 960"
+			fill="rgb(100,100,100)"
+			><path
+				d="M480-200 240-440l56-56 184 183 184-183 56 56-240 240Zm0-240L240-680l56-56 184 183 184-183 56 56-240 240Z"
+			></path></svg
+		>
+		<a href="https://discord.gg/ZSY2HR9Wv5">Discord Community</a>
 	</div>
 </Page>
 
@@ -39,9 +56,34 @@ import Page from "../layouts/Page.astro";
 		line-height: 1.9rem;
 		color: var(--text-clr);
 		text-wrap: balance;
-		margin-bottom: 30px;
+	}
+	a {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+		font-weight: bold;
+		font-size: 1.1rem;
+		background-color: transparent;
+		border: 1.5px solid var(--text-clr-status);
+		color: var(--text-clr-status);
+		height: 58px;
+		width: 412px;
+		margin-inline: auto;
+		padding: 0;
+
+		&:hover {
+			background-color: rgba(89, 101, 241, 0.1);
+			border-color: #5965f1;
+		}
+	}
+	svg {
+		margin: 10px auto 10px auto;
 	}
 
+	.modpack-description {
+		margin-bottom: 40px;
+	}
 	.element {
 		display: grid;
 		justify-content: center;
