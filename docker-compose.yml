@@ -1,13 +1,13 @@
 services:
     koconut-web:
-        build: ./koconut_mc_web
+        build: .
         container_name: koconut_mc_web
         read_only: true
         ports:
             - "8000:80"
         restart: unless-stopped
         volumes:
-            - ./modpacks:/data/dist/download:ro
+            - ./modpack:/data/dist/download:ro
     redis:
         image: redis
         container_name: redis
