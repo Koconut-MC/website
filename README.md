@@ -1,5 +1,7 @@
 # koconutmc.com Website
 
+<img src="public/koconutmc_logo.webp" height="150px">
+
 ## Development
 
 Prerequisite: a node package manager such as [npm](https://www.npmjs.com/)
