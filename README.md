@@ -1,6 +1,6 @@
 # koconutmc.com Website
 
-<img src="public/koconutmc_logo.webp" height="150px">
+<img src="public/koconutmc_logo.webp" height="300px">
 
 ## Development
 
