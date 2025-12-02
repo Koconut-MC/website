@@ -16,4 +16,4 @@ COPY --from=builder /build/dist ./dist
 
 EXPOSE 80/tcp
 
-ENTRYPOINT [ "sh", "-c", "static-web-server -p 80 -d /data/dist -g trace" ]
+ENTRYPOINT [ "entrypoint.sh -p 80 -d /data/dist -g trace" ]
