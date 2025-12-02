@@ -1,11 +1,10 @@
 ---
-import { type page } from "../ts/pages";
 import HtmlBody from "../layouts/Body.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
 interface Props {
-	page: page;
+	page: string;
 }
 const { page } = Astro.props;
 ---
