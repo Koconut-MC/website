@@ -1,6 +1,8 @@
 # koconutmc.com Website
 
-<img src="public/koconutmc_logo.webp" height="300px">
+<img alt="logo" src="public/koconutmc_logo.webp" align="right" width="128px" height="128px">
+
+The website is a front-end to the Koconut MC modpack and for Koconut SMP.
 
 ## Development
 
