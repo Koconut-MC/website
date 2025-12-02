@@ -2,7 +2,7 @@
 
 <img alt="logo" src="public/koconutmc_logo.webp" align="right" width="128px" height="128px">
 
-This project is the front-end to the Koconut MC modpack and for Koconut SMP.
+This project is the front-end source code for the Koconut MC modpack and Koconut SMP.
 <br></br>
 <br></br>
 
