@@ -1,11 +1,9 @@
 ---
-import { type page } from "../ts/global";
-
 interface Props {
-	current: page;
+	current: string;
 }
 
-const header_pages = ["Home", "About", "Map", "Modpack", "Issues", "Commands"];
+const header_pages = ["Home", "About", "Modpack", "Gallery", "Commands", "Map"];
 
 const { current } = Astro.props;
 ---
