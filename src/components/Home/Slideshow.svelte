@@ -1,5 +1,5 @@
 <script lang="ts">
-	import pictures from "./Gallery";
+	import pictures from "../../ts/Gallery";
 
 	let picture_index = Math.floor(Math.random() * pictures.length);
 	let current_picture = $state(pictures[picture_index]);
@@ -54,6 +54,19 @@
 		<button onclick={() => picture_display(false)}>&#10094;</button>
 		<button onclick={() => picture_display(true)}>&#10095;</button>
 	</section>
+	<a href="/gallery" class="gallery-fullscreen"
+		>Gallery <svg
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 -960 960 960"
+			height="24px"
+			width="24px"
+			fill="rgb(200, 200, 200)"
+		>
+			<path
+				d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"
+			></path>
+		</svg></a
+	>
 </main>
 
 <style>
@@ -66,6 +79,7 @@
 		background-size: cover;
 		background-repeat: no-repeat;
 		border-radius: 5px;
+		margin-bottom: 35px;
 
 		&:hover button {
 			opacity: 1;
@@ -93,7 +107,7 @@
 		justify-content: space-between;
 		width: 95%;
 		margin-inline: auto;
-		top: 29%;
+		top: 25%;
 		position: relative;
 	}
 
@@ -103,7 +117,7 @@
 		background-color: var(--pic-element-clr);
 		border: 0;
 		width: 40px;
-		height: 50px;
+		height: 70px;
 		color: var(--credit-clr);
 		opacity: 0;
 
@@ -114,6 +128,22 @@
 
 	p {
 		margin: 0;
+	}
+
+	.gallery-fullscreen {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: #181818;
+		height: 40px;
+		font-weight: bold;
+		gap: 10px;
+		color: rgb(200, 200, 200);
+		margin-top: 36%;
+
+		&:hover {
+			background-color: #222;
+		}
 	}
 
 	.title {
