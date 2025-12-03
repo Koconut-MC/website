@@ -1,6 +1,6 @@
 :root {
 	--element-clr: hsl(360 0 10);
-	--element-clr-odd: hsl(360 0 8);
+	--element-clr-even: hsl(360 0 8);
 	--text-clr-status: rgb(150, 150, 150);
 	--text-clr: rgb(230, 230, 230);
 	--special-clr: #ffdf70;
