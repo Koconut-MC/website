@@ -1,6 +1,6 @@
 ---
 // Automate changelogs on the home page
-const md_dir = import.meta.glob("../md/changelogs/*.md", { eager: true });
+const md_dir = import.meta.glob("../../md/changelogs/*.md", { eager: true });
 const mds = Object.values(md_dir).map((file) => {
 	const { Content } = file as any; //its all hacks anyway, lets create more
 	return {
