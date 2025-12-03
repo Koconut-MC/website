@@ -33,9 +33,7 @@
 	auto_advance();
 </script>
 
-<main
-	style={`background-image: url("/slideshow/${current_picture.file_name}")`}
->
+<main style={`background-image: url("/gallery/${current_picture.file_name}")`}>
 	<header>
 		<p class="title">{current_picture.display_name}</p>
 		<div>
