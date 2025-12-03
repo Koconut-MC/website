@@ -1,0 +1,116 @@
+---
+import Page from "../layouts/Page.astro";
+import About from "../md/about.md";
+---
+
+<Page page="Commands">
+	<div class="element">
+		<h1>Commands</h1>
+		<p>List of available commands for Koconut SMP.</p>
+		<section class="commands">
+			<div>
+				<p class="command-name">/spawn</p>
+				<p class="command-desc">return back to spawn</p>
+			</div>
+			<div>
+				<p class="command-name">/back</p>
+				<p class="command-desc">
+					return back to a previous death location
+				</p>
+			</div>
+			<div>
+				<p class="command-name">/playtime</p>
+				<p class="command-desc">show your active playtime</p>
+			</div>
+			<div>
+				<p class="command-name">/tpa <span>[player]</span></p>
+				<p class="command-desc">send a teleport request to a player</p>
+			</div>
+			<div>
+				<p class="command-name">/tpahere <span>[player]</span></p>
+				<p class="command-desc">
+					send a teleport request to a player to bring them
+				</p>
+			</div>
+			<div>
+				<p class="command-name">/tpadeny</p>
+				<p class="command-desc">explicitly deny a tpa request</p>
+			</div>
+			<div>
+				<p class="command-name">/home</p>
+				<p class="command-desc">teleport to your set home location</p>
+			</div>
+			<div>
+				<p class="command-name">/homes</p>
+				<p class="command-desc">list active home locations</p>
+			</div>
+			<div>
+				<p class="command-name">/sethome <span>[name]</span></p>
+				<p class="command-desc">set a home location</p>
+			</div>
+			<div>
+				<p class="command-name">/delhome <span>[name]</span></p>
+				<p class="command-desc">delete a home location</p>
+			</div>
+			<div>
+				<p class="command-name">/afk</p>
+				<p class="command-desc">go into AFK mode</p>
+			</div>
+		</section>
+		<p>
+			Note that these commands and utilities found on Koconut SMP do not
+			come with the Koconut MC modpack.
+		</p>
+	</div>
+</Page>
+
+<style>
+	p {
+		font-size: 1.1rem;
+	}
+	h1 {
+		color: var(--special-clr);
+
+		&::after {
+			content: "";
+			display: block;
+			background-color: rgb(40, 40, 40);
+			width: 60%;
+			height: 1px;
+			margin: 20px auto 0 auto;
+		}
+	}
+
+	.element {
+		background-color: var(--element-clr);
+		width: 100%;
+		padding: 20px 100px 20px 100px;
+		text-align: center;
+		text-wrap: balance;
+	}
+	.commands {
+		width: 70%;
+		margin: 30px auto 30px auto;
+
+		div {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			background-color: rgb(20, 20, 20);
+			padding: 10px 30px 10px 30px;
+		}
+		div:nth-child(even) {
+			background-color: rgb(15, 15, 15);
+		}
+		span {
+			color: rgb(150, 150, 150);
+			font-weight: normal;
+		}
+	}
+	.command-name {
+		font-weight: bold;
+	}
+	.command-desc {
+		font-size: 1rem;
+	}
+</style>
