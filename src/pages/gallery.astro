@@ -1,0 +1,25 @@
+---
+import Page from "../layouts/Page.astro";
+import Gallery from "../components/Gallery/src.svelte";
+---
+
+<Page page="Gallery">
+	<div class="element">
+		<Gallery client:only="svelte" />
+		<noscript>
+			<h1 class="red">JavaScript is required to view the gallery.</h1>
+		</noscript>
+	</div>
+</Page>
+
+<style>
+	.element {
+		background-color: var(--element-clr);
+		width: 100%;
+		padding: 20px 100px 20px 100px;
+	}
+	.red {
+		color: var(--red);
+		text-align: center;
+	}
+</style>
