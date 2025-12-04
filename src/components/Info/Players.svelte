@@ -86,6 +86,6 @@
 		color: var(--special-clr);
 	}
 	.red {
-		color: #c01e1e;
+		color: var(--red);
 	}
 </style>
