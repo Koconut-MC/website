@@ -4,8 +4,8 @@
 	--text-clr-status: rgb(150, 150, 150);
 	--text-clr: rgb(230, 230, 230);
 	--special-clr: #ffdf70;
-	--header-width: 1200px;
 	--red: #c01e1e;
+	--header-width: 1200px;
 
 	color-scheme: dark;
 }

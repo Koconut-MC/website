@@ -1,13 +1,17 @@
 <script lang="ts">
 	import pictures from "../../ts/Gallery";
-	import FullscreenView, { expandImage } from "./FullscreenView.svelte";
+	import ImageEnhancer, { image_enhancer } from "./Enhancer.svelte";
 </script>
 
 <section>
-	<FullscreenView />
+	<ImageEnhancer />
 	{#each pictures as picture}
 		<button
-			onclick={() => expandImage(picture.file_name)}
+			onclick={() =>
+				image_enhancer.set(
+					picture.file_name,
+					`${picture.display_name} - ${picture.author_date}`,
+				)}
 			class="gallery-image"
 			style={`background-image: url(/gallery/${picture.file_name});`}
 		>
