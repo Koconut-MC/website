@@ -1,5 +1,7 @@
 # About
 
+<img src="/koconut_banner.webp" height="350px"/>
+
 Koconut MC is a modpack that is focused around [Create](https://youtu.be/rR8W-f9YhYA), [MineColonies](https://minecolonies.com/), and Roleplay. Koconut SMP is the official SMP server for the Koconut MC modpack.
 
 Our modpack was created and derived from a previous modpack that belonged to another SMP, we built on top of it as a template and formed Koconut MC soon after that SMP was abandoned and negcleted by its owners and admins; we had enough of the unqualified people running the SMP and maintaining its modpack.
