@@ -22,50 +22,61 @@
 <script>
 	import { scale, fade } from "svelte/transition";
 
-	const trans_duration: number = 300;
+	const open_duration: number = 300;
 </script>
 
+{#snippet download_icon()}
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 -960 960 960"
+		height="100%"
+		width="100%"
+		fill="#e3e3e3"
+		><path
+			d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"
+		/></svg
+	>
+{/snippet}
+
+{#snippet close_icon()}
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 -960 960 960"
+		height="100%"
+		width="100%"
+		fill="#e3e3e3"
+		><path
+			d="m256-200-56-56 224-224-224-224 56-56 224 224 224 224-56 56-224-224-224 224Z"
+		/></svg
+	>
+{/snippet}
+
 {#if image_enhancer.visible}
-	<main transition:fade={{ duration: trans_duration }}>
+	<main transition:fade={{ duration: open_duration }}>
 		<div
 			class="image-window"
-			transition:scale={{ duration: trans_duration }}
+			transition:scale={{ duration: open_duration }}
 		>
 			<header>
 				<p>{image_enhancer.image_name}</p>
 				<div class="actions">
 					<!-- download button -->
-					<a title="Download" href={image_enhancer.image} download
-						><svg
-							xmlns="http://www.w3.org/2000/svg"
-							viewBox="0 -960 960 960"
-							height="100%"
-							width="100%"
-							fill="#e3e3e3"
-							><path
-								d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"
-							/></svg
-						></a
-					>
+					<a title="Download" href={image_enhancer.image} download>
+						{@render download_icon()}
+					</a>
 					<!-- close button -->
-					<button title="Close" onclick={() => image_enhancer.close()}
-						><svg
-							xmlns="http://www.w3.org/2000/svg"
-							viewBox="0 -960 960 960"
-							height="100%"
-							width="100%"
-							fill="#e3e3e3"
-							><path
-								d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
-							/></svg
-						></button
+					<button
+						title="Close"
+						onclick={() => image_enhancer.close()}
 					>
+						{@render close_icon()}
+					</button>
 				</div>
 			</header>
 			<section>
 				<div
 					class="image-large"
-					style={`background-image: url(${image_enhancer.image});`}
+					style:background_image={image_enhancer.image}
 				></div>
 			</section>
 		</div>

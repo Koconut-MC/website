@@ -13,7 +13,7 @@
 					`${picture.display_name} - ${picture.author_date}`,
 				)}
 			class="gallery-image"
-			style={`background-image: url(/gallery/${picture.file_name});`}
+			style:background_image={picture.file_name}
 		>
 			<div class="image-details">
 				{`${picture.display_name} - ${picture.author_date}`}
