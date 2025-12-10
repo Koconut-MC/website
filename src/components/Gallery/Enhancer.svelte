@@ -21,8 +21,6 @@
 
 <script>
 	import { scale, fade } from "svelte/transition";
-
-	const open_duration: number = 300;
 </script>
 
 {#snippet download_icon()}
@@ -52,10 +50,11 @@
 {/snippet}
 
 {#if image_enhancer.visible}
-	<main transition:fade={{ duration: open_duration }}>
+	{@const anim_duration = 300}
+	<main transition:fade={{ duration: anim_duration }}>
 		<div
 			class="image-window"
-			transition:scale={{ duration: open_duration }}
+			transition:scale={{ duration: anim_duration }}
 		>
 			<header>
 				<p>{image_enhancer.image_name}</p>

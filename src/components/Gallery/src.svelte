@@ -6,18 +6,13 @@
 <section>
 	<ImageEnhancer />
 	{#each pictures as picture}
+		{@const image_name = `${picture.display_name} - ${picture.author_date}`}
 		<button
-			onclick={() =>
-				image_enhancer.set(
-					picture.file_name,
-					`${picture.display_name} - ${picture.author_date}`,
-				)}
+			onclick={() => image_enhancer.set(picture.file_name, image_name)}
 			class="gallery-image"
 			style:background_image={picture.file_name}
 		>
-			<div class="image-details">
-				{`${picture.display_name} - ${picture.author_date}`}
-			</div>
+			<div class="image-details">{image_name}</div>
 		</button>
 	{/each}
 </section>
