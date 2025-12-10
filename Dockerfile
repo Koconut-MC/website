@@ -2,7 +2,13 @@ FROM oven/bun AS builder
 
 WORKDIR /build
 
-COPY package.json bun.lock astro.config.mjs svelte.config.js postcss.config.cjs ./
+COPY package.json \
+	bun.lock \
+	astro.config.mjs \
+	svelte.config.js \
+	postcss.config.cjs \
+	./
+
 COPY public ./public
 COPY src ./src
 
