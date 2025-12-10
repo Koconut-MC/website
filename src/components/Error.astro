@@ -1,0 +1,24 @@
+---
+import Element from "./Element.astro";
+import Page from "../layouts/Page.astro";
+
+interface Props {
+	page: string;
+	message: string;
+}
+const { page, message } = Astro.props;
+---
+
+<Page page={page}>
+	<Element>
+		<h1>{page}</h1>
+		<h2>{message}</h2>
+	</Element>
+</Page>
+
+<style>
+	h1 {
+		font-size: 3rem;
+		color: var(--special-clr);
+	}
+</style>

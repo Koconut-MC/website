@@ -1,24 +1,5 @@
 ---
-import Page from "../layouts/Page.astro";
+import Error from "../components/Error.astro";
 ---
 
-<Page page="404">
-	<div class="element">
-		<h1>404</h1>
-		<h2>Page Not Found</h2>
-	</div>
-</Page>
-
-<style>
-	.element {
-		background-color: var(--element-clr);
-		width: 100%;
-		text-align: center;
-		text-wrap: balance;
-		padding: 20px 100px 20px 100px;
-	}
-	h1 {
-		font-size: 3rem;
-		color: var(--special-clr);
-	}
-</style>
+<Error page="404" message="Page Not Found" />

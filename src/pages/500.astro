@@ -1,24 +1,5 @@
 ---
-import Page from "../layouts/Page.astro";
+import Error from "../components/Error.astro";
 ---
 
-<Page page="500">
-	<div class="element">
-		<h1>500</h1>
-		<h2>Internal Server Error</h2>
-	</div>
-</Page>
-
-<style>
-	.element {
-		background-color: var(--element-clr);
-		width: 100%;
-		text-align: center;
-		text-wrap: balance;
-		padding: 20px 100px 20px 100px;
-	}
-	h1 {
-		font-size: 3rem;
-		color: var(--special-clr);
-	}
-</style>
+<Error page="500" message="Internal Server Error" />
