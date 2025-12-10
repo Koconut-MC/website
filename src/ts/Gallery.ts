@@ -51,3 +51,4 @@ const pictures: Picture[] = [
 ];
 
 export default pictures;
+export { type Picture };

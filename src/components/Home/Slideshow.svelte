@@ -1,8 +1,8 @@
 <script lang="ts">
-	import pictures from "../../ts/Gallery";
+	import pictures, { type Picture } from "../../ts/Gallery";
 
 	let picture_index = Math.floor(Math.random() * pictures.length);
-	let current_picture = $state(pictures[picture_index]);
+	let current_picture = $state<Picture>(pictures[picture_index]);
 
 	let auto_advance_interval: NodeJS.Timeout;
 
@@ -33,7 +33,7 @@
 	auto_advance();
 </script>
 
-<main style={`background-image: url("/gallery/${current_picture.file_name}")`}>
+<main style:background-image={`url(/gallery/${current_picture.file_name})`}>
 	<header>
 		<p class="title">{current_picture.display_name}</p>
 		<div>

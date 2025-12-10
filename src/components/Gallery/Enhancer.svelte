@@ -44,7 +44,7 @@
 		width="100%"
 		fill="#e3e3e3"
 		><path
-			d="m256-200-56-56 224-224-224-224 56-56 224 224 224 224-56 56-224-224-224 224Z"
+			d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
 		/></svg
 	>
 {/snippet}
@@ -75,7 +75,7 @@
 			<section>
 				<div
 					class="image-large"
-					style:background_image={image_enhancer.image}
+					style:background-image={`url(${image_enhancer.image})`}
 				></div>
 			</section>
 		</div>

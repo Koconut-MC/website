@@ -10,7 +10,7 @@
 		<button
 			onclick={() => image_enhancer.set(picture.file_name, image_name)}
 			class="gallery-image"
-			style:background_image={picture.file_name}
+			style:background-image={`url(/gallery/${picture.file_name})`}
 		>
 			<div class="image-details">{image_name}</div>
 		</button>
