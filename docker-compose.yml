@@ -26,6 +26,20 @@ services:
             - REDIS_URL=redis://redis
         networks:
             - crafatar-net
+    bluemap:
+        image: ghcr.io/bluemap-minecraft/bluemap
+        container_name: koconut_smp_bluemap
+        restart: unless-stopped
+        command: -r -u -w
+        ports:
+            - "8100:8100"
+        volumes:
+            - "./config:/app/config"
+            - "./world:/app/world"
+            - "./world_nether:/app/world_nether"
+            - "./world_the_end:/app/world_the_end"
+            - "./data:/app/data"
+            - "./web:/app/web"
 volumes:
     crafatar-images:
 networks:
