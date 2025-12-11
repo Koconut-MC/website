@@ -10,7 +10,7 @@
 	},
 	"dependencies": {
 		"@astrojs/svelte": "^7.2.2",
-		"astro": "^5.16.4",
+		"astro": "^5.16.5",
 		"autoprefixer": "^10.4.22",
 		"svelte": "^5.45.8",
 		"typescript": "^5.9.3"
