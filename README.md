@@ -38,7 +38,7 @@ Prerequisites: docker and docker-compose
 
 A [docker-compose.yml](docker-compose.yml) is provided by the project for easy deployment. The compose stack uses [crafatar](https://github.com/crafatar/crafatar) API to retrieve player avatar images, the API also requires [redis](https://redis.io/).
 
-The web map uses [Bluemap](https://github.com/BlueMap-Minecraft/Bluemap) which is also included in the compose stack, it is highly recommended to consult [BlueMap's documentation](https://bluemap.bluecolored.de/wiki/getting-started/Installation.html#using-bluemap-docker-image) for configuring a Minecraft world to use and its modpack resources.
+The web map uses [Bluemap](https://github.com/BlueMap-Minecraft/Bluemap) which is also included in the compose stack, it is highly recommended to consult [BlueMap's documentation](https://bluemap.bluecolored.de/wiki/getting-started/Installation.html#using-bluemap-docker-image) for configuring a Minecraft world to use and its modpack resources before deploying.
 
 ### Deploying the compose manually:
 
