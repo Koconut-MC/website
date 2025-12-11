@@ -30,7 +30,7 @@ services:
         image: ghcr.io/bluemap-minecraft/bluemap
         container_name: koconut_smp_bluemap
         restart: unless-stopped
-        command: -r -u -w
+        command: -r -u -w --mods /app/mods --maps "overworld,nether,end"
         ports:
             - "8100:8100"
         volumes:
@@ -40,6 +40,7 @@ services:
             - "./world_the_end:/app/world_the_end"
             - "./data:/app/data"
             - "./web:/app/web"
+            - "./mods:/app/mods"
 volumes:
     crafatar-images:
 networks:
