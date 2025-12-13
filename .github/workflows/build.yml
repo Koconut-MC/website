@@ -1,0 +1,40 @@
+name: CI
+
+on:
+    push:
+        branches: ["main"]
+        paths:
+            - "src/**"
+            - "public/**"
+            - "Dockerfile"
+            - "astro.config.mjs"
+            - "postcss.config.js"
+            - "svelte.config.js"
+    pull_request:
+        branches: ["main"]
+        paths:
+            - "src/**"
+            - "public/**"
+            - "Dockerfile"
+            - "astro.config.mjs"
+            - "postcss.config.js"
+            - "svelte.config.js"
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        permissions:
+            contents: read
+            packages: write
+        steps:
+            - uses: actions/checkout@v4
+            - name: ghcr login
+              uses: docker/login-action@v3
+              with:
+                  registry: ghcr.io
+                  username: ${{ github.repository_owner }}
+                  password: ${{ secrets.GITHUB_TOKEN }}
+            - name: Build Docker image
+              run: docker build . -t koconut_mc_website:latest
+            - name: Push Docker image
+              run: docker push ghcr.io/koconut_mc_website:latest
