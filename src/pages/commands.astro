@@ -1,6 +1,38 @@
 ---
-import Page from "../layouts/Page.astro";
 import Element from "../components/Element.astro";
+import Page from "../layouts/Page.astro";
+
+interface Command {
+	name: string;
+	arg?: string;
+	description: string;
+}
+const commands: Command[] = [
+	{ name: "spawn", description: "return back to spawn" },
+	{ name: "back", description: "return back to a previous death location" },
+	{ name: "playtime", description: "show your active playtime" },
+	{
+		name: "tpa",
+		arg: "player",
+		description: "send a teleport request to a player",
+	},
+	{
+		name: "tpahere",
+		arg: "player",
+		description: "send a bring teleport request to a player",
+	},
+	{ name: "tpadeny", description: "explicitly deny a tpa request" },
+	{ name: "home", description: "teleport to your set home location" },
+	{ name: "homes", description: "list active home locations" },
+	{ name: "sethome", arg: "name", description: "set a home location" },
+	{ name: "delhome", arg: "name", description: "delete a home location" },
+	{ name: "afk", description: "go into AFK mode" },
+	{
+		name: "rtp",
+		description:
+			"teleport to a random location between 100 - 10000 blocks away",
+	},
+];
 ---
 
 <Page page="Commands">
@@ -8,54 +40,17 @@ import Element from "../components/Element.astro";
 		<h1>Commands</h1>
 		<p>List of available commands for Koconut SMP.</p>
 		<section class="commands">
-			<div>
-				<p class="command-name">/spawn</p>
-				<p class="command-desc">return back to spawn</p>
-			</div>
-			<div>
-				<p class="command-name">/back</p>
-				<p class="command-desc">
-					return back to a previous death location
-				</p>
-			</div>
-			<div>
-				<p class="command-name">/playtime</p>
-				<p class="command-desc">show your active playtime</p>
-			</div>
-			<div>
-				<p class="command-name">/tpa <span>[player]</span></p>
-				<p class="command-desc">send a teleport request to a player</p>
-			</div>
-			<div>
-				<p class="command-name">/tpahere <span>[player]</span></p>
-				<p class="command-desc">
-					send a bring teleport request to a player
-				</p>
-			</div>
-			<div>
-				<p class="command-name">/tpadeny</p>
-				<p class="command-desc">explicitly deny a tpa request</p>
-			</div>
-			<div>
-				<p class="command-name">/home</p>
-				<p class="command-desc">teleport to your set home location</p>
-			</div>
-			<div>
-				<p class="command-name">/homes</p>
-				<p class="command-desc">list active home locations</p>
-			</div>
-			<div>
-				<p class="command-name">/sethome <span>[name]</span></p>
-				<p class="command-desc">set a home location</p>
-			</div>
-			<div>
-				<p class="command-name">/delhome <span>[name]</span></p>
-				<p class="command-desc">delete a home location</p>
-			</div>
-			<div>
-				<p class="command-name">/afk</p>
-				<p class="command-desc">go into AFK mode</p>
-			</div>
+			{
+				commands.map((command) => (
+					<div>
+						<p class="command-name">
+							{"/" + command.name}
+							{command.arg && <span>[{command.arg}]</span>}
+						</p>
+						<p class="command-desc">{command.description}</p>
+					</div>
+				))
+			}
 		</section>
 		<p>
 			Note that these commands and utilities found on Koconut SMP do not
