@@ -2,7 +2,7 @@
 	import Loading from "../Loading.svelte";
 	import mcsrvstat_api, { type McStatus } from "../../ts/mcsrvstat";
 
-	let showing_players = $state(false);
+	let showing_players = $state<boolean>(false);
 </script>
 
 {#snippet show_players(response: McStatus)}
