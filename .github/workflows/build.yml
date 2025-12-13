@@ -28,7 +28,7 @@ jobs:
                   registry: ghcr.io
                   username: ${{ github.repository_owner }}
                   password: ${{ secrets.GITHUB_TOKEN }}
-            - name: Build and push Docker image
-              run: |
-                  docker build . -t ghcr.io/koconut-mc/website:latest
-                  docker push ghcr.io/koconut-mc/website:latest
+            - name: Build Docker image
+              run: docker build . -t ghcr.io/koconut-mc/website:latest
+            - name: Push Docker image
+              run: docker push ghcr.io/koconut-mc/website:latest
