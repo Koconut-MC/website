@@ -1,8 +1,7 @@
 services:
     koconut-web:
-        build: .
+        image: ghcr.io/koconut-mc/website
         container_name: koconut_mc_web
-        read_only: true
         ports:
             - "8000:80"
         restart: unless-stopped
