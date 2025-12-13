@@ -12,7 +12,7 @@
 		"@astrojs/svelte": "^7.2.3",
 		"astro": "^5.16.5",
 		"autoprefixer": "^10.4.22",
-		"svelte": "^5.45.8",
+		"svelte": "^5.45.10",
 		"typescript": "^5.9.3"
 	}
 }
