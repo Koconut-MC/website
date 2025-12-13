@@ -7,18 +7,12 @@ on:
             - "src/**"
             - "public/**"
             - "Dockerfile"
-            - "astro.config.mjs"
-            - "postcss.config.js"
-            - "svelte.config.js"
     pull_request:
         branches: ["main"]
         paths:
             - "src/**"
             - "public/**"
             - "Dockerfile"
-            - "astro.config.mjs"
-            - "postcss.config.js"
-            - "svelte.config.js"
 
 jobs:
     build:
