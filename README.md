@@ -39,6 +39,8 @@ The project recommends converting lossless to lossy webp images with a quality p
 ffmpeg -i input.png -q:v 90 compressed_output.webp
 ```
 
+The image naming format is `<title>_<author>.webp`.
+
 ## Deployment
 
 ### This is the recommended way for production use.
