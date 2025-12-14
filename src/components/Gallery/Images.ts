@@ -48,6 +48,18 @@ const images: Image[] = [
 		author_date: "DraconicLogan, 10/29/25",
 		hidden: false,
 	},
+	{
+		file_name: "spawn_hypabit.webp",
+		display_name: "Spawn",
+		author_date: "hypabit, 12/11/25",
+		hidden: false,
+	},
+	{
+		file_name: "glumpball_koco.webp",
+		display_name: "Glumpball",
+		author_date: "Koco, 12/12/25",
+		hidden: false,
+	},
 ];
 
 export default images;
