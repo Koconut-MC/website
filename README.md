@@ -1,11 +1,10 @@
 # koconutmc.com Website
 
-[![Dependabot Updates](https://github.com/Koconut-MC/website/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/Koconut-MC/website/actions/workflows/dependabot/dependabot-updates)
-[![CI](https://github.com/Koconut-MC/website/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/Koconut-MC/website/actions/workflows/build.yml)
-
 <img alt="logo" src="public/koconutmc_logo.webp" align="right" width="128px" height="128px">
 
 This project is the front-end source code for the Koconut MC modpack and Koconut SMP.
+[![Dependabot Updates](https://github.com/Koconut-MC/website/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/Koconut-MC/website/actions/workflows/dependabot/dependabot-updates)
+[![CI](https://github.com/Koconut-MC/website/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/Koconut-MC/website/actions/workflows/build.yml)
 <br></br>
 <br></br>
 
