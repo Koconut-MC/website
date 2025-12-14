@@ -46,7 +46,7 @@ The web map uses [Bluemap](https://github.com/BlueMap-Minecraft/Bluemap) which i
 ```sh
 cd website
 mkdir modpack # the volume that holds large sized modpack files for downloading off the web
-docker compose up -d --build
+docker compose up -d # before deploying the compose stack, it is recommended to read the compose first
 ```
 
 #### License
