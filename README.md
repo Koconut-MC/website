@@ -31,6 +31,14 @@ npm run build
 npm run preview # start a web server for TESTING purposes
 ```
 
+### Adding images to the gallery:
+
+The project recommends converting lossless to lossy webp images with a quality preset of 90% for the images gallery (`/public/gallery`).
+
+```sh
+ffmpeg -i input.png -q:v 90 compressed_output.webp
+```
+
 ## Deployment
 
 ### This is the recommended way for production use.
