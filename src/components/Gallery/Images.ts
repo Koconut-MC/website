@@ -1,11 +1,11 @@
-interface Picture {
+interface Image {
 	file_name: string;
 	display_name: string;
 	author_date: string;
 	hidden: boolean;
 }
 
-const pictures: Picture[] = [
+const images: Image[] = [
 	{
 		file_name: "koconut_factory_train_hypabit.webp",
 		display_name: "Koco's Factory Train",
@@ -50,5 +50,5 @@ const pictures: Picture[] = [
 	},
 ];
 
-export default pictures;
-export { type Picture };
+export default images;
+export { type Image };

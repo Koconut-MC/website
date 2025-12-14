@@ -1,16 +1,16 @@
 <script lang="ts">
-	import pictures from "../../ts/Gallery";
+	import images from "./Images";
 	import ImageEnhancer, { image_enhancer } from "./Enhancer.svelte";
 </script>
 
 <section>
 	<ImageEnhancer />
-	{#each pictures as picture}
-		{@const image_name = `${picture.display_name} - ${picture.author_date}`}
+	{#each images as image}
+		{@const image_name = `${image.display_name} - ${image.author_date}`}
 		<button
-			onclick={() => image_enhancer.set(picture.file_name, image_name)}
+			onclick={() => image_enhancer.set(image.file_name, image_name)}
 			class="gallery-image"
-			style:background-image={`url(/gallery/${picture.file_name})`}
+			style:background-image={`url(/gallery/${image.file_name})`}
 		>
 			<div class="image-details">{image_name}</div>
 		</button>

@@ -1,8 +1,8 @@
 <script lang="ts">
-	import pictures, { type Picture } from "../../ts/Gallery";
+	import images, { type Image } from "./Images";
 
-	let picture_index = Math.floor(Math.random() * pictures.length);
-	let current_picture = $state<Picture>(pictures[picture_index]);
+	let picture_index = Math.floor(Math.random() * images.length);
+	let current_picture = $state<Image>(images[picture_index]);
 
 	let auto_advance_interval: NodeJS.Timeout;
 
@@ -12,16 +12,16 @@
 
 		if (advance) {
 			picture_index += 1;
-			if (picture_index === pictures.length) {
+			if (picture_index === images.length) {
 				picture_index = 0;
 			}
 		} else {
 			picture_index -= 1;
 			if (picture_index === -1) {
-				picture_index = pictures.length - 1;
+				picture_index = images.length - 1;
 			}
 		}
-		current_picture = pictures[picture_index];
+		current_picture = images[picture_index];
 	}
 
 	function auto_advance() {
