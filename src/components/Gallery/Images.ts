@@ -60,6 +60,12 @@ const images: Image[] = [
 		author_date: "Koco, 12/12/25",
 		hidden: false,
 	},
+	{
+		file_name: "factory_morning_koco.webp",
+		display_name: "Factory Morning",
+		author_date: "Koco, 12/14/25",
+		hidden: false,
+	},
 ];
 
 export default images;
