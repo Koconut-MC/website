@@ -187,10 +187,6 @@
 		width: 50px;
 		height: 50px;
 		border-top-right-radius: 5px;
-
-		&:hover {
-			background-color: #222;
-		}
 	}
 
 	.gallery {
