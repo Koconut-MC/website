@@ -93,6 +93,7 @@
 		height: 100vh;
 		z-index: 999;
 		top: 0;
+		left: 0;
 		position: fixed;
 		backdrop-filter: blur(10px) brightness(30%);
 	}
