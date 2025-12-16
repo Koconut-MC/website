@@ -1,12 +1,12 @@
 <script module lang="ts">
 	class EnhanceImage {
+		public display_name = $state<string | null>(null);
 		public visible = $state<boolean>(false);
 		public image = $state<string | null>(null);
-		public image_name = $state<string | null>(null);
 
-		public set(file_name: string, image_name: string) {
+		public set(file_name: string, display_name: string) {
 			this.image = `/gallery/${file_name}`;
-			this.image_name = image_name;
+			this.display_name = display_name;
 			this.visible = true;
 			document.body.style.overflow = "hidden";
 		}
@@ -57,7 +57,7 @@
 			transition:scale={{ duration: anim_duration }}
 		>
 			<header>
-				<p>{image_enhancer.image_name}</p>
+				<p>{image_enhancer.display_name}</p>
 				<div class="actions">
 					<!-- download button -->
 					<a title="Download" href={image_enhancer.image} download>

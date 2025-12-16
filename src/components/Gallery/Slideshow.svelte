@@ -36,7 +36,7 @@
 		clearInterval(auto_advance_interval);
 		image_enhancer.set(
 			current_picture.file_name,
-			current_picture.display_name,
+			`${current_picture.display_name} - ${current_picture.author_date}`,
 		);
 	}
 
