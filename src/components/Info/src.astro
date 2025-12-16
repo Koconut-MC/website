@@ -45,7 +45,8 @@ import Players from "./Players.svelte";
 
 			&:hover,
 			&:visited,
-			&:active {
+			&:active,
+			&:focus-visible {
 				color: var(--text-clr-status);
 			}
 		}
@@ -70,7 +71,8 @@ import Players from "./Players.svelte";
 			padding: 8px 30px 8px 30px;
 			color: var(--text-clr-status);
 
-			&:hover {
+			&:hover,
+			&:focus-visible {
 				background-color: rgb(40, 40, 40);
 			}
 		}

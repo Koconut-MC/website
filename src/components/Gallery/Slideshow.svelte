@@ -126,7 +126,7 @@
 		border-radius: 5px;
 		margin-bottom: 35px;
 
-		&:hover button {
+		&:is(:hover, :focus-visible) button {
 			opacity: 1;
 		}
 	}
@@ -154,8 +154,10 @@
 		height: 70px;
 		color: var(--credit-clr);
 		opacity: 0;
+		backdrop-filter: blur(5px);
 
-		&:hover {
+		&:hover,
+		&:focus-visible {
 			background-color: black;
 		}
 	}
@@ -200,7 +202,8 @@
 		color: rgb(200, 200, 200);
 		margin-top: 36%;
 
-		&:hover {
+		&:hover,
+		&:focus-visible {
 			background-color: #222;
 		}
 	}

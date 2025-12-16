@@ -19,7 +19,8 @@
 		width: fit-content;
 		margin: 15px auto 10px auto;
 
-		&:hover {
+		&:hover,
+		&:focus-visible {
 			text-decoration: underline;
 		}
 	}

@@ -59,7 +59,8 @@
 		margin: 20px auto 0 auto;
 		padding: 15px 40px 15px 40px;
 
-		&:hover {
+		&:hover,
+		&:focus-visible {
 			background-color: rgb(40, 40, 40);
 		}
 		&:disabled {

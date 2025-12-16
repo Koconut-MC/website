@@ -58,7 +58,7 @@ const { current } = Astro.props;
 	.header-logo {
 		margin-inline: auto;
 
-		&:hover img {
+		&:is(:hover, :focus-visible) img {
 			height: 210px;
 			transition: height 0.3s;
 		}
@@ -85,7 +85,7 @@ const { current } = Astro.props;
 			background-color: var(--background-clr-active);
 			color: var(--text-clr-active);
 		}
-		&:hover:not(&[data-current="true"]) {
+		&:is(:hover, :focus-visible):not(&[data-current="true"]) {
 			background-color: var(--background-clr-hover);
 			transition: background-color 0.1s;
 		}
