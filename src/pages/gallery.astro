@@ -6,7 +6,6 @@ import Page from "../layouts/Page.astro";
 
 <Page page="Gallery">
 	<Element>
-		<h1>Gallery</h1>
 		<Gallery client:only="svelte" />
 		<noscript>
 			<h1 class="red">JavaScript is required to view the gallery.</h1>
@@ -15,18 +14,6 @@ import Page from "../layouts/Page.astro";
 </Page>
 
 <style>
-	h1 {
-		color: var(--special-clr);
-
-		&::after {
-			content: "";
-			display: block;
-			background-color: rgb(40, 40, 40);
-			width: 60%;
-			height: 1px;
-			margin: 20px auto 0 auto;
-		}
-	}
 	.red {
 		color: var(--red);
 		text-align: center;

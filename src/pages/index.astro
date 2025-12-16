@@ -2,6 +2,7 @@
 import Changelogs from "../components/Home/Changelogs.astro";
 import Slideshow from "../components/Gallery/Slideshow.svelte";
 import Discord from "../components/Home/Discord.astro";
+import YtEmbed from "../components/YtEmbed.svelte";
 import Info from "../components/Info/src.astro";
 import Page from "../layouts/Page.astro";
 import Map from "../components/Map.astro";
@@ -10,6 +11,12 @@ import Map from "../components/Map.astro";
 <Page page="Home">
 	<div class="left">
 		<Slideshow client:only="svelte" />
+		<YtEmbed
+			width="100%"
+			height="440px"
+			id="fVI3m3ejvcQ?si=XM9DmRLgTcbhlIDx"
+			client:only="svelte"
+		/>
 		<Changelogs />
 	</div>
 	<div class="right">
