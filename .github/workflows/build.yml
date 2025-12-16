@@ -7,14 +7,12 @@ on:
             - "src/**"
             - "public/**"
             - "Dockerfile"
-            - "package.json"
     pull_request:
         branches: ["main"]
         paths:
             - "src/**"
             - "public/**"
             - "Dockerfile"
-            - "package.json"
 
 jobs:
     build:
