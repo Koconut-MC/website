@@ -3,11 +3,16 @@
 ---
 
 <footer>
-	<p>&copy;2025 Koconut MC. LGPL v3.</p>
-	<a
-		href="https://github.com/Koconut-MC/website/blob/main/LICENSE"
-		target="_blank">LICENSE</a
-	>
+	<p>&copy;2025 Koco. LGPL v3.</p>
+	<section>
+		<a href="https://github.com/Koconut-MC/website/" target="_blank"
+			>CONTRIBUTE</a
+		>
+		<a
+			href="https://github.com/Koconut-MC/website/blob/main/LICENSE"
+			target="_blank">LICENSE</a
+		>
+	</section>
 </footer>
 
 <style>
@@ -19,13 +24,22 @@
 		background-color: var(--element-clr);
 		width: var(--header-width);
 		margin: 30px auto 30px auto;
+		gap: 5px;
+	}
+	section {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 15px;
+		margin-bottom: 10px;
 	}
 	p {
 		margin-bottom: 0;
+		text-align: center;
 	}
 	a {
 		text-align: center;
-		margin-bottom: 15px;
+		margin: 0;
 		color: hsl(360 1 50);
 
 		&:hover,
