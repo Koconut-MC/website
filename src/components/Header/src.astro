@@ -1,26 +1,23 @@
 ---
+import header_pages, { to_anchor_link } from "./Pages.ts";
+import MobileHeader from "./Mobile.svelte";
+
 interface Props {
 	current: string;
 }
-
-const header_pages = ["Home", "About", "Modpack", "Gallery", "Commands", "Map"];
-
 const { current } = Astro.props;
 ---
 
 <header>
+	<MobileHeader client:only="svelte" current={current} />
 	<a href="/" class="header-logo">
 		<img src="/koconutmc.webp" alt="Home" height="200px" />
 	</a>
-	<nav>
+	<nav class="nav-header">
 		{
 			header_pages.map((page) => (
 				<a
-					href={
-						page === "Home"
-							? "/"
-							: `/${page[0].toLowerCase() + page.slice(1)}`
-					}
+					href={to_anchor_link(page)}
 					data-current={current === page}
 					class="header-button"
 				>
@@ -35,12 +32,25 @@ const { current } = Astro.props;
 	header {
 		display: grid;
 		justify-content: center;
-		align-items: center;
 		width: 100%;
 		height: 480px;
+
+		@media only screen and (max-width: 1300px) {
+			align-items: initial;
+			justify-content: initial;
+		}
 	}
 
-	nav {
+	img {
+		margin-top: 50px;
+		transition: height 0.3s;
+
+		@media only screen and (max-width: 1300px) {
+			margin: 0;
+		}
+	}
+
+	.nav-header {
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
@@ -48,11 +58,11 @@ const { current } = Astro.props;
 		background-color: var(--element-clr);
 		width: var(--header-width);
 		box-shadow: 12px 12px 0px 1px rgb(10, 10, 10);
-	}
+		height: 70px;
 
-	img {
-		margin-top: 50px;
-		transition: height 0.3s;
+		@media only screen and (max-width: 1300px) {
+			display: none;
+		}
 	}
 
 	.header-logo {
@@ -88,6 +98,10 @@ const { current } = Astro.props;
 		&:is(:hover, :focus-visible):not(&[data-current="true"]) {
 			background-color: var(--background-clr-hover);
 			transition: background-color 0.1s;
+		}
+
+		@media only screen and (max-width: 1300px) {
+			display: none;
 		}
 	}
 </style>
