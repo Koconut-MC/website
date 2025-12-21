@@ -1,6 +1,6 @@
 <script lang="ts">
 	import header_pages, { to_anchor_link } from "./Pages.ts";
-	import { slide, fade } from "svelte/transition";
+	import { slide } from "svelte/transition";
 
 	interface Props {
 		current: string;
@@ -9,8 +9,9 @@
 
 	let menu_visible = $state<boolean>(false);
 
-	function toggle_menu(visible: boolean) {
-		menu_visible = visible;
+	function toggleMenu(enabled: boolean) {
+		menu_visible = enabled;
+		document.body.style.overflow = enabled ? "hidden" : "hidden visible";
 	}
 </script>
 
@@ -18,7 +19,7 @@
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		viewBox="0 -960 960 960"
-		height="50px"
+		height="100px"
 		fill="#e3e3e3"
 		><path
 			d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
@@ -30,7 +31,7 @@
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		viewBox="0 -960 960 960"
-		height="50px"
+		height="100px"
 		fill="#e3e3e3"
 		><path
 			d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
@@ -40,16 +41,16 @@
 
 <nav class="mobile-header">
 	<section class="mobile-menu">
-		<button onclick={() => toggle_menu(true)}
+		<button onclick={() => toggleMenu(true)}
 			>{@render hamburger_icon()} Menu</button
 		>
 	</section>
 	{#if menu_visible}
-		<main class="blur" transition:fade={{ duration: 200 }}>
+		<main class="menu-background">
 			<section class="menu" transition:slide={{ duration: 200 }}>
 				<header class="menu-header">
 					<h1>Menu</h1>
-					<button onclick={() => toggle_menu(false)}
+					<button onclick={() => toggleMenu(false)}
 						>{@render close_icon()}</button
 					>
 				</header>
@@ -75,16 +76,17 @@
 		border: 0;
 		background-color: transparent;
 		font-weight: bold;
-		font-size: 1.7rem;
+		font-size: 3rem;
 	}
 
 	a {
 		display: block;
-		padding: 30px;
 		text-decoration: none;
 		background-color: transparent;
 		text-align: center;
-		font-size: 1.5rem;
+		font-size: 4rem;
+		padding: 70px;
+		border: 2px solid var(--special-clr);
 
 		&[data-current="true"] {
 			color: black;
@@ -99,7 +101,7 @@
 		justify-content: left;
 		align-items: center;
 		display: none;
-		height: 80px;
+		height: 150px;
 		width: 100%;
 		background-color: var(--element-clr-even);
 
@@ -108,48 +110,49 @@
 		}
 	}
 
-	.blur {
+	.menu-background {
 		display: grid;
 		width: 100%;
 		height: 100%;
 		padding: 20px;
 		left: 0;
 		top: 0;
-		backdrop-filter: blur(10px) brightness(30%);
 		padding: 0;
 		position: fixed;
 	}
 
 	.menu {
-		width: 500px;
+		width: 100%;
 		height: 100%;
 		background-color: var(--element-clr-even);
 	}
 
 	.menu-header {
+		--spacing: 40px;
+
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		background-color: var(--element-clr);
 		width: 100%;
-		height: 100px;
+		height: 200px;
 		padding: 0;
+		font-size: 2rem;
 
 		h1 {
-			margin-left: 20px;
+			margin-left: var(--spacing);
 		}
 		button {
-			margin-right: 20px;
+			margin-right: var(--spacing);
 		}
 	}
 
 	.menu-content {
 		display: grid;
-		align-items: center;
-		gap: 20px;
+		gap: 50px;
 		width: 80%;
 		margin-inline: auto;
-		margin-top: 20px;
+		margin-top: 50px;
 	}
 
 	.mobile-menu {
