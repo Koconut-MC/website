@@ -101,12 +101,14 @@
 		justify-content: left;
 		align-items: center;
 		display: none;
+		z-index: -1;
 		height: 150px;
 		width: 100%;
 		background-color: var(--element-clr-even);
 
 		@media (max-width: 1300px) {
 			display: flex;
+			z-index: 999;
 		}
 	}
 
