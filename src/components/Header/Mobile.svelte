@@ -103,7 +103,7 @@
 		width: 100%;
 		background-color: var(--element-clr-even);
 
-		@media only screen and (max-width: 1300px) {
+		@media (max-width: 1300px) {
 			display: flex;
 		}
 	}
@@ -158,7 +158,7 @@
 		align-items: center;
 		display: none;
 
-		@media only screen and (max-width: 1300px) {
+		@media (max-width: 1300px) {
 			display: block;
 		}
 	}
