@@ -44,12 +44,7 @@
 </script>
 
 {#snippet camera_icon()}
-	<svg
-		xmlns="http://www.w3.org/2000/svg"
-		viewBox="0 -960 960 960"
-		height="24px"
-		width="24px"
-	>
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
 		<path
 			d="M480-260q75 0 127.5-52.5T660-440q0-75-52.5-127.5T480-620q-75 0-127.5 52.5T300-440q0 75 52.5 127.5T480-260Zm0-80q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29ZM160-120q-33 0-56.5-23.5T80-200v-480q0-33 23.5-56.5T160-760h126l74-80h240l74 80h126q33 0 56.5 23.5T880-680v480q0 33-23.5 56.5T800-120H160Zm0-80h640v-480H638l-73-80H395l-73 80H160v480Zm320-240Z"
 		></path>
@@ -60,8 +55,6 @@
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		viewBox="0 -960 960 960"
-		height="24px"
-		width="24px"
 		fill="rgb(200, 200, 200)"
 	>
 		<path
@@ -73,9 +66,7 @@
 {#snippet open_in_full()}
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
-		height="24px"
 		viewBox="0 -960 960 960"
-		width="24px"
 		fill="#e3e3e3"
 		><path
 			d="M120-120v-320h80v184l504-504H520v-80h320v320h-80v-184L256-200h184v80H120Z"
@@ -118,6 +109,7 @@
 	main {
 		--credit-clr: rgb(200, 200, 200);
 		--pic-element-clr: rgba(0, 0, 0, 0.6);
+		--icon-svg-size: 24px;
 
 		background-color: var(--element-clr);
 		height: 440px;
@@ -129,6 +121,19 @@
 		&:is(:hover, :focus-visible) button {
 			opacity: 1;
 		}
+
+		@media (max-width: 1300px) {
+			--icon-svg-size: 50px;
+
+			height: 680px;
+			margin-bottom: 80px;
+			font-size: 2.5rem;
+		}
+	}
+
+	svg {
+		width: var(--icon-svg-size);
+		height: var(--icon-svg-size);
 	}
 
 	header {
@@ -160,6 +165,10 @@
 		&:focus-visible {
 			background-color: black;
 		}
+
+		@media (max-width: 1300px) {
+			display: none;
+		}
 	}
 
 	p {
@@ -172,13 +181,18 @@
 		background-color: var(--pic-element-clr);
 		height: fit-content;
 		width: fit-content;
-		margin: 0 0 0;
+		margin: 0;
 		padding: 10px 15px 10px 10px;
 		color: var(--credit-clr);
+		gap: 5px;
 
 		svg {
-			padding: 0 5px 0 0;
 			fill: rgb(100, 100, 100);
+		}
+
+		@media (max-width: 1300px) {
+			padding: 20px 15px 20px 20px;
+			gap: 20px;
 		}
 	}
 
@@ -189,6 +203,10 @@
 		width: 50px;
 		height: 50px;
 		border-top-right-radius: 5px;
+
+		@media (max-width: 1300px) {
+			display: none;
+		}
 	}
 
 	.gallery {
@@ -206,6 +224,11 @@
 		&:focus-visible {
 			background-color: #222;
 		}
+
+		@media (max-width: 1300px) {
+			height: 90px;
+			margin-top: 37%;
+		}
 	}
 
 	.title {
@@ -217,5 +240,9 @@
 		height: fit-content;
 		width: fit-content;
 		border-top-left-radius: 5px;
+
+		@media (max-width: 1300px) {
+			padding: 20px;
+		}
 	}
 </style>
