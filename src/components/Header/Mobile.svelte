@@ -1,6 +1,7 @@
 <script lang="ts">
 	import header_pages, { to_anchor_link } from "./Pages.ts";
 	import { slide } from "svelte/transition";
+	import Players from "./Players.svelte";
 
 	interface Props {
 		current: string;
@@ -62,6 +63,7 @@
 						>
 					{/each}
 				</main>
+				<Players />
 			</section>
 		</main>
 	{/if}
