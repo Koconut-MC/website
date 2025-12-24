@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Loading from "../Loading.svelte";
-	import mcsrvstat_api, { type McStatus } from "./mcsrvstat";
+	import mcsrvstat_api, { type McStatus } from "../Api/mcsrvstat";
 
 	let showing_players = $state<boolean>(false);
 </script>
