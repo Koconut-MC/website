@@ -22,7 +22,9 @@
 </iframe>
 
 <style>
-	iframe {
-		height: var(--mobile-height);
+	@media (max-width: 1300px) {
+		iframe {
+			height: var(--mobile-height);
+		}
 	}
 </style>
