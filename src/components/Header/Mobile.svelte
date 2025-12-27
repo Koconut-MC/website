@@ -108,7 +108,7 @@
 		width: 100%;
 		background-color: var(--element-clr-even);
 
-		@media (max-width: 1300px) {
+		@media (max-width: 1000px) {
 			display: flex;
 			z-index: 999;
 		}
@@ -165,7 +165,7 @@
 		align-items: center;
 		display: none;
 
-		@media (max-width: 1300px) {
+		@media (max-width: 1000px) {
 			display: block;
 		}
 	}
