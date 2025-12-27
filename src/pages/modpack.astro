@@ -35,12 +35,23 @@ import Page from "../layouts/Page.astro";
 			background-color: rgb(40, 40, 40);
 			margin: 20px auto 0 auto;
 		}
+
+		@media (max-width: 1300px) {
+			font-size: 5rem;
+			margin-top: 0;
+		}
 	}
 	p {
 		font-size: 1.1rem;
 		line-height: 1.9rem;
 		color: var(--text-clr);
 		text-wrap: balance;
+
+		@media (max-width: 1300px) {
+			font-size: 3rem;
+			line-height: 4rem;
+			margin-top: 0;
+		}
 	}
 	a {
 		display: flex;
