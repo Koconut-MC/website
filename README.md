@@ -6,6 +6,7 @@ This project is the front-end source code for the Koconut MC modpack and Koconut
 
 [![Dependabot Updates](https://github.com/Koconut-MC/website/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/Koconut-MC/website/actions/workflows/dependabot/dependabot-updates)
 [![CI](https://github.com/Koconut-MC/website/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/Koconut-MC/website/actions/workflows/build.yml)
+[![Koconut SMP Discord Invite](https://img.shields.io/discord/1415929434472583221?color=%237289DA&label=chat&logo=discord&logoColor=white)](https://discord.gg/ZSY2HR9Wv5)
 <br></br>
 <br></br>
 
