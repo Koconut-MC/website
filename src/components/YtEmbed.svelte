@@ -1,15 +1,24 @@
 <script lang="ts">
 	interface Props {
-		width: string;
+		mobileHeight: string;
+		mobileWidth?: string;
 		height: string;
+		width: string;
 		id: string;
 	}
-	const { width, height, id }: Props = $props();
+	const {
+		mobileHeight,
+		mobileWidth = mobileHeight,
+		width,
+		height,
+		id,
+	}: Props = $props();
 </script>
 
 <iframe
 	{width}
 	{height}
+	style={`--mobile-height: ${mobileHeight}; --mobile-width: ${mobileWidth}`}
 	src={`https://www.youtube.com/embed/${id}`}
 	title="YouTube video player"
 	frameborder="0"
@@ -18,3 +27,12 @@
 	allowfullscreen
 >
 </iframe>
+
+<style>
+	@media (max-width: 1000px) {
+		iframe {
+			height: var(--mobile-height);
+			width: var(--mobile-width);
+		}
+	}
+</style>

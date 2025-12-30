@@ -20,5 +20,9 @@
 			height: 1px;
 			margin: 20px auto 20px auto;
 		}
+
+		@media (max-width: 1000px) {
+			font-size: 4rem;
+		}
 	}
 </style>

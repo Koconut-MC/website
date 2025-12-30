@@ -1,8 +1,10 @@
 <script lang="ts">
 	interface Props {
 		visible: boolean;
+		width?: string;
+		height?: string;
 	}
-	const { visible }: Props = $props();
+	const { visible, width = "24px", height = "30px" }: Props = $props();
 </script>
 
 <!-- https://codepen.io/aurer/pen/ZEJxpO -->
@@ -12,8 +14,8 @@
 	xmlns:xlink="http://www.w3.org/1999/xlink"
 	x="0px"
 	y="0px"
-	width="24px"
-	height="30px"
+	{width}
+	{height}
 	viewBox="0 0 24 30"
 	style={`enable-background:new 0 0 50 50; display: ${visible ? "block" : "none"}`}
 	xml:space="preserve"

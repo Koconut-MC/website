@@ -28,6 +28,10 @@ const mds = Object.values(md_dir).map((file) => {
 			width: fit-content;
 			padding: 10px 20px 10px 20px;
 			font-size: 1.5rem;
+
+			@media (max-width: 1000px) {
+				font-size: 3rem;
+			}
 		}
 		:not(h1) {
 			color: var(--text-clr);
@@ -39,6 +43,10 @@ const mds = Object.values(md_dir).map((file) => {
 			&:focus-visible {
 				text-decoration: underline;
 			}
+		}
+
+		@media (max-width: 1000px) {
+			font-size: 2rem;
 		}
 	}
 </style>

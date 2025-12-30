@@ -62,6 +62,10 @@ const commands: Command[] = [
 <style>
 	p {
 		font-size: 1.1rem;
+
+		@media (max-width: 1000px) {
+			font-size: 3rem;
+		}
 	}
 
 	h1 {
@@ -74,6 +78,10 @@ const commands: Command[] = [
 			width: 60%;
 			height: 1px;
 			margin: 20px auto 0 auto;
+		}
+
+		@media (max-width: 1000px) {
+			font-size: 4rem;
 		}
 	}
 
@@ -95,6 +103,10 @@ const commands: Command[] = [
 			color: rgb(150, 150, 150);
 			font-weight: normal;
 		}
+
+		@media (max-width: 1000px) {
+			width: 100%;
+		}
 	}
 
 	.command-name {
@@ -103,5 +115,10 @@ const commands: Command[] = [
 
 	.command-desc {
 		font-size: 1rem;
+		text-align: right;
+
+		@media (max-width: 1000px) {
+			font-size: 2rem;
+		}
 	}
 </style>

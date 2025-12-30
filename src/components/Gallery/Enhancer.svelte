@@ -27,8 +27,7 @@
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		viewBox="0 -960 960 960"
-		height="100%"
-		width="100%"
+		class="enhancer-icon-button"
 		fill="#e3e3e3"
 		><path
 			d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"
@@ -40,8 +39,7 @@
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		viewBox="0 -960 960 960"
-		height="100%"
-		width="100%"
+		class="enhancer-icon-button"
 		fill="#e3e3e3"
 		><path
 			d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
@@ -93,6 +91,10 @@
 		left: 0;
 		position: fixed;
 		backdrop-filter: blur(10px) brightness(30%);
+
+		@media (max-width: 1000px) {
+			--header-height: 150px;
+		}
 	}
 
 	header {
@@ -127,6 +129,11 @@
 		.actions {
 			display: flex;
 			gap: 5px;
+
+			@media (max-width: 1000px) {
+				gap: 80px;
+				margin-right: 30px;
+			}
 		}
 	}
 
@@ -146,5 +153,17 @@
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: contain;
+	}
+
+	@media (max-width: 1000px) {
+		p {
+			font-size: 2.8rem;
+		}
+
+		.enhancer-icon-button {
+			height: 120px;
+			width: 120px;
+			overflow: clip;
+		}
 	}
 </style>

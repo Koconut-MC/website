@@ -4,11 +4,7 @@
 
 <a class="modrinth-download" href="/download/Modrinth.mrpack" download>
 	<!-- From: https://modrinth.com/ -->
-	<svg
-		xmlns="http://www.w3.org/2000/svg"
-		width="40px"
-		height="40px"
-		viewBox="0 0 512 514"
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 514"
 		><path
 			fill="#1bd96a"
 			fill-rule="evenodd"
@@ -41,6 +37,14 @@
 		&:link {
 			color: var(--text-clr);
 		}
+
+		@media (max-width: 1000px) {
+			font-size: 3rem;
+			padding: 50px 130px 50px 130px;
+			width: 500px;
+			gap: 40px;
+			margin-bottom: 80px;
+		}
 	}
 
 	.modrinth-download:is(:hover, :focus-visible) {
@@ -50,5 +54,13 @@
 	.curseforge-download:is(:hover, :focus-visible) {
 		border: 1px solid #fc7f15;
 		background-color: rgb(252, 127, 21, 0.1);
+	}
+
+	@media (max-width: 1000px) {
+		svg,
+		img {
+			width: 100px;
+			height: 100px;
+		}
 	}
 </style>

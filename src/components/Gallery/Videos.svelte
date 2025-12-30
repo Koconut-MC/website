@@ -1,12 +1,20 @@
 <script lang="ts">
 	import YtEmbed from "../YtEmbed.svelte";
 
-	const width: string = "700";
-	const height: string = "400";
+	const width: string = "750px";
+	const height: string = "400px";
+	const mobileHeight: string = "600px";
+	const mobileWidth: string = "1100px";
 </script>
 
 <section class="videos">
-	<YtEmbed {width} {height} id="fVI3m3ejvcQ?si=IZUVI1tFvjzPmb73" />
+	<YtEmbed
+		{width}
+		{height}
+		{mobileHeight}
+		{mobileWidth}
+		id="fVI3m3ejvcQ?si=IZUVI1tFvjzPmb73"
+	/>
 </section>
 
 <style>
