@@ -26,6 +26,11 @@
 		grid-row-gap: 30px;
 		justify-items: center;
 		margin: 30px 0 30px 0;
+
+		@media (max-width: 1000px) {
+			grid-template-columns: repeat(1, 1fr);
+			grid-template-rows: repeat(1, 1fr);
+		}
 	}
 
 	.image-details {
@@ -37,6 +42,11 @@
 		background-color: rgba(0, 0, 0, 0.7);
 		backdrop-filter: blur(10px);
 		font-size: 0.9rem;
+
+		@media (max-width: 1000px) {
+			font-size: 3rem;
+			height: 100px;
+		}
 	}
 	.gallery-image {
 		display: flex;
@@ -55,6 +65,11 @@
 			transform: scale(1.05);
 			transition: transform 0.3s;
 			cursor: pointer;
+		}
+
+		@media (max-width: 1000px) {
+			width: 100%;
+			height: 700px;
 		}
 	}
 </style>
