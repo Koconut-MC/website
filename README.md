@@ -1,67 +1,75 @@
-# koconutmc.com Website
+# React + TypeScript + Vite
 
-<img alt="logo" src="public/koconutmc_logo.webp" align="right" width="128px" height="128px">
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-This project is the front-end source code for the Koconut MC modpack and Koconut SMP.
+Currently, two official plugins are available:
 
-[![Dependabot Updates](https://github.com/Koconut-MC/website/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/Koconut-MC/website/actions/workflows/dependabot/dependabot-updates)
-[![CI](https://github.com/Koconut-MC/website/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/Koconut-MC/website/actions/workflows/build.yml)
-[![Koconut SMP Discord Invite](https://img.shields.io/discord/1415929434472583221?color=%237289DA&label=chat&logo=discord&logoColor=white)](https://discord.gg/ZSY2HR9Wv5)
-<br></br>
-<br></br>
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Development
+## React Compiler
 
-Prerequisite: a node package manager such as [npm](https://www.npmjs.com/)
+The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
 
-```sh
-cd website
-npm install
+Note: This will impact Vite dev & build performances.
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
+
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```
 
-### For development:
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```sh
-npm run dev
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
+
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```
-
-### For production testing:
-
-```sh
-npm run build
-npm run preview # start a web server for TESTING purposes
-```
-
-### Adding images to the gallery:
-
-The project recommends converting lossless to lossy webp images with a quality preset of 90% for the images gallery (`/public/gallery`).
-
-```sh
-ffmpeg -i input.png -q:v 90 compressed_output.webp
-```
-
-The image naming format is `<title>_<author>.webp`.
-
-## Deployment
-
-### This is the recommended way for production use.
-
-Prerequisites: docker and docker-compose
-
-A [docker-compose.yml](docker-compose.yml) is provided by the project for easy deployment. The compose stack uses [crafatar](https://github.com/crafatar/crafatar) API to retrieve player avatar images, the API also requires [redis](https://redis.io/).
-
-The web map uses [Bluemap](https://github.com/BlueMap-Minecraft/Bluemap) which is also included in the compose stack, it is highly recommended to consult [BlueMap's documentation](https://bluemap.bluecolored.de/wiki/getting-started/Installation.html#using-bluemap-docker-image) for configuring a Minecraft world to use and its modpack resources before deploying.
-
-### Deploying the compose manually:
-
-```sh
-cd website
-mkdir modpack # the volume that holds large sized modpack files for downloading off the web
-docker compose up -d # before deploying the compose stack, it is recommended to read the compose first
-```
-
-#### License
-
-<sup>
-Licensed under <a href="LICENSE">LGPL-3.0 License</a>.
-</sup>
