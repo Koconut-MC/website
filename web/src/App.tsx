@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router";
+import BgVideo from "./components/bg-video";
 import Home from "./app/home";
 import "./App.css";
 
@@ -10,4 +11,5 @@ function App() {
 	);
 }
 
+			<BgVideo />
 export default App;
