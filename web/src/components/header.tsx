@@ -5,12 +5,16 @@ function Navigation() {
 	return (
 		<div className="bg-element-dark w-full h-18 flex justify-between items-center border-b border-b-[#333333] p-5">
 			{/*Left - Logo*/}
-			<Link to="/">
+			<Link
+				to="/"
+				className="flex justify-center items-center text-white gap-5 font-bold text-xl"
+			>
 				<img
 					src="/koconutmc_logo.webp"
 					alt="Home"
 					className="h-13 rounded-md"
 				/>
+				<h1>Koconut MC</h1>
 			</Link>
 			{/*Right - Nav Buttons*/}
 			<div className="[&_a:hover]:bg-selection-alpha [&_a:hover]:text-white [&_a]:p-3 [&_a]:rounded-2xl text-[#b3b3b3] text-md flex justify-center items-center gap-4">

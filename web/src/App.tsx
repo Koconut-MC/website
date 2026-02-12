@@ -4,21 +4,14 @@ import Header from "./components/header";
 import Home from "./app/home";
 import "./index.css";
 
-// The header bar handles routing
-function Routing() {
-	return (
-		<Routes>
-			<Route path="/" index element={<Home />} />
-		</Routes>
-	);
-}
-
 function App() {
 	return (
 		<>
-			<Routing />
 			<BgVideo />
 			<Header />
+			<Routes>
+				<Route path="/" index element={<Home />} />
+			</Routes>
 		</>
 	);
 }
