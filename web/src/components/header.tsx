@@ -27,21 +27,27 @@ function Navigation() {
 	);
 }
 
+function HomeLogo() {
+	return (
+		<div className="mx-auto">
+			<Link to="/">
+				<img
+					src="/koconutmc.webp"
+					alt="Home"
+					className="h-65 my-30 hover:scale-108 transition-transform duration-400"
+				/>
+			</Link>
+		</div>
+	);
+}
+
 function Header() {
 	return (
 		<header className="flex flex-col">
 			{/*Header navigation bar*/}
 			<Navigation />
 			{/*Logo*/}
-			<div className="mx-auto">
-				<Link to="/">
-					<img
-						src="/koconutmc.webp"
-						alt="Home"
-						className="h-65 my-30 hover:scale-108 transition-transform duration-400"
-					/>
-				</Link>
-			</div>
+			<HomeLogo />
 		</header>
 	);
 }
