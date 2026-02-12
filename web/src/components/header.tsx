@@ -3,7 +3,7 @@ import ExternalLink from "./externalLink";
 
 function Navigation() {
 	return (
-		<div className="bg-element-dark w-full h-17 flex justify-between items-center border-b border-b-gray-700 p-5">
+		<div className="bg-element-dark w-full h-18 flex justify-between items-center border-b border-b-[#333333] p-5">
 			{/*Left - Logo*/}
 			<Link to="/">
 				<img
@@ -12,7 +12,7 @@ function Navigation() {
 					className="h-13 rounded-md"
 				/>
 			</Link>
-			{/*Middle - Nav Buttons*/}
+			{/*Right - Nav Buttons*/}
 			<div className="[&_a:hover]:bg-selection-alpha [&_a:hover]:text-white [&_a]:p-3 [&_a]:rounded-2xl text-[#b3b3b3] text-md flex justify-center items-center gap-4">
 				<Link to="/">Home</Link>
 				<Link to="/about">About</Link>
