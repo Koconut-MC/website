@@ -1,6 +1,13 @@
-@tailwind base;
-@tailwind components;
+@import "tailwindcss";
+
 @tailwind utilities;
+
+@theme {
+	--color-element-dark: #141414;
+	--color-element-even-dark: #1e1e1e;
+	--color-selection: #ffdf70;
+	--color-selection-alpha: #ffdf701a;
+}
 
 :root {
 	font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -9,4 +16,15 @@
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+	background-color: var(--color-selection);
+	color: black;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	overflow-x: hidden;
 }

@@ -1,9 +1,11 @@
 import { Route, Routes } from "react-router";
 import BgVideo from "./components/bg-video";
+import Header from "./components/header";
 import Home from "./app/home";
-import "./App.css";
+import "./index.css";
 
-function App() {
+// The header bar handles routing
+function Routing() {
 	return (
 		<Routes>
 			<Route path="/" index element={<Home />} />
@@ -11,5 +13,14 @@ function App() {
 	);
 }
 
+function App() {
+	return (
+		<>
+			<Routing />
 			<BgVideo />
+			<Header />
+		</>
+	);
+}
+
 export default App;
