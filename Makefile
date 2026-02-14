@@ -3,7 +3,7 @@ clean:
 
 web:
 	rm -rf web/dist
-	cd web && npm install --frozen-lockfile
+	cd web && npm install
 	cd web && npm run build
 
 express:
