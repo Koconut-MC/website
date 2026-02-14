@@ -10,7 +10,7 @@ RUN bun run build
 
 FROM nginx:stable-alpine
 
-COPY --from=builder /app/build /usr/share/nginx/html
+COPY --from=builder /app/dist /usr/share/nginx/html
 
 RUN echo 'server { \
 	listen 8000; \
