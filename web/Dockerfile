@@ -13,7 +13,7 @@ FROM nginx:stable-alpine
 COPY --from=builder /app/build /usr/share/nginx/html
 
 RUN echo 'server { \
-	listen 3000; \
+	listen 8000; \
 	location / { \
 	root /usr/share/nginx/html; \
 	index index.html; \
@@ -21,6 +21,6 @@ RUN echo 'server { \
 	} \
 	}' > /etc/nginx/conf.d/default.conf
 
-EXPOSE 3000
+EXPOSE 8000
 
 CMD ["nginx", "-g", "daemon off;"]
