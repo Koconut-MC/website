@@ -3,11 +3,11 @@ clean:
 
 web:
 	rm -rf web/dist
-	cd web && bun install --frozen-lockfile
-	cd web && bun run build
+	cd web && npm install --frozen-lockfile
+	cd web && npm run build
 
 express:
-	bun run express/src/index.mjs
+	npm run express/src/index.mjs
 
 web-docker:
 	docker build web/ -t koconut-web
