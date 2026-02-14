@@ -1,9 +1,9 @@
-FROM oven/bun
+FROM node
 
 WORKDIR /app
 COPY . .
-RUN bun install --frozen-lockfile
+RUN npm install
 
 EXPOSE 3000
 
-CMD ["bun", "run", "src/index.mts"]
+CMD ["node", "src/index.mts"]
