@@ -6,13 +6,13 @@ web:
 	cd web && bun install --frozen-lockfile
 	cd web && bun run build
 
-bot:
-	bun run bot/src/index.mjs
+express:
+	bun run express/src/index.mjs
 
 web-docker:
-	docker build ./web/ -t koconut-web
+	docker build web/ -t koconut-web
 
-bot-docker:
-	docker build . -f bot -t koconut-bot
+express-docker:
+	docker build express/ -t koconut-express
 
-docker: web-docker bot-docker
+docker: web-docker express-docker

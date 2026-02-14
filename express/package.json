@@ -1,0 +1,12 @@
+{
+	"name": "express",
+	"module": "src/index.mts",
+	"type": "module",
+	"private": true,
+	"devDependencies": {
+		"@types/bun": "latest"
+	},
+	"peerDependencies": {
+		"typescript": "^5"
+	}
+}
